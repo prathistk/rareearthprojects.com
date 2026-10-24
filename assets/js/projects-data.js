@@ -199,7 +199,7 @@
         gallery: [
           { src: 'montira/aerial.jpg', sm: 'montira/aerial-sm.jpg', w: 2400, h: 1350, alt: 'Aerial view of the Montira layout beneath Nandi Hills', cap: 'The estate from above' },
           { src: 'montira/lawns.jpg', sm: 'montira/lawns-sm.jpg', w: 2400, h: 1350, alt: 'Landscaped lawns with Nandi Hills in view', cap: 'Under Nandi Hills' },
-          { src: 'montira/gardens.jpg', sm: 'montira/gardens-sm.jpg', w: 2400, h: 1350, alt: 'Ornamental grasses and pathways', cap: 'The gardens' },
+          { src: 'montira/garden-pavilion.jpg', sm: 'montira/garden-pavilion-sm.jpg', w: 2400, h: 1350, alt: 'Landscaped gardens and a glass-fronted pavilion at Montira, with Nandi Hills beyond', cap: 'The gardens' },
           // owner's architect renders of the proposed clubhouse (PDF, 10 Jul 2026); architect's mark cropped out at the owner's request
           { src: 'montira/clubhouse-day.jpg', sm: 'montira/clubhouse-day-sm.jpg', w: 1694, h: 928, alt: 'The proposed Montira clubhouse by day, an architect\'s render', cap: 'The proposed clubhouse', note: 'Architect\'s render · proposed · indicative', kind: 'render' },
           { src: 'montira/clubhouse-dusk.jpg', sm: 'montira/clubhouse-dusk-sm.jpg', w: 2000, h: 1125, alt: 'The proposed Montira clubhouse at dusk, an architect\'s render', cap: 'The clubhouse at dusk', note: 'Architect\'s render · proposed · indicative', kind: 'render' }
