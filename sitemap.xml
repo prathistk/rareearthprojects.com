@@ -2,14 +2,14 @@
 <!-- Rare Earth Projects · sitemap. Canonical host: https://www.rareearthprojects.com
      Update <lastmod> when a page's content changes. 404.html and projects/_template.html are deliberately excluded. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.rareearthprojects.com/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.rareearthprojects.com/projects/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.rareearthprojects.com/projects/montira/</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.rareearthprojects.com/projects/athena/</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.rareearthprojects.com/projects/serenity/</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.rareearthprojects.com/projects/tranquility/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.rareearthprojects.com/projects/arcadia/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.rareearthprojects.com/projects/elysia/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.rareearthprojects.com/contact/</loc><lastmod>2026-10-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.rareearthprojects.com/legal/</loc><lastmod>2026-10-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.rareearthprojects.com/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.rareearthprojects.com/projects/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.rareearthprojects.com/projects/montira/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.rareearthprojects.com/projects/athena/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.rareearthprojects.com/projects/serenity/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rareearthprojects.com/projects/tranquility/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rareearthprojects.com/projects/arcadia/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rareearthprojects.com/projects/elysia/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.rareearthprojects.com/contact/</loc><lastmod>2026-10-24</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.rareearthprojects.com/legal/</loc><lastmod>2026-10-24</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

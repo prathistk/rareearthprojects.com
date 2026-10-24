@@ -111,6 +111,8 @@ body.menu-open .overlay{clip-path:inset(0 0 0 0);visibility:visible;transition:c
 .overlay nav a.sub{font-size:clamp(1.3rem,2.4vw,2rem);padding-left:50px;color:var(--mute-d)}
 .overlay nav a:hover{color:var(--gold-hi);font-style:italic}
 .overlay nav a.sub.is-cur{color:var(--gold);font-style:italic}
+.overlay nav a.sub i{font-family:var(--sans);font-style:normal;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);align-self:center;white-space:nowrap}
+.ov-quick{display:none}
 body.menu-open .overlay nav a{opacity:1;transform:none}
 .overlay aside{border-left:1px solid var(--hair-d);padding:140px var(--gut) 60px;display:flex;flex-direction:column;justify-content:space-between;gap:34px;position:relative;overflow:hidden}
 .overlay aside .vlogo{width:110px}
@@ -966,6 +968,15 @@ body[data-project]{background:var(--base)}
   .hdr-r .enq{display:none}
   .overlay{grid-template-columns:1fr}
   .overlay aside{display:none}
+  /* phone menu: content starts under the header (centring clipped the top once the list grew),
+     roomier community links (finger-sized targets) and one-tap Call / WhatsApp / Email */
+  .overlay nav{justify-content:flex-start;padding-top:118px;padding-bottom:calc(36px + env(safe-area-inset-bottom))}
+  .overlay nav a{padding:3px 0}
+  .overlay nav a.sub{font-size:clamp(1.3rem,5.6vw,1.6rem);padding:8px 0 8px 50px;gap:14px;color:rgba(244,239,230,.72)}
+  .ov-quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:30px;padding-top:26px;border-top:1px solid var(--hair-d)}
+  .overlay nav .ov-quick a{font-family:var(--sans);font-weight:500;font-style:normal;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;line-height:1;flex-direction:column;align-items:center;justify-content:center;gap:10px;height:72px;padding:0;border:1px solid var(--hair-d);border-radius:var(--r-btn);color:var(--ivory)}
+  .overlay nav .ov-quick a:hover{font-style:normal;color:var(--gold-hi)}
+  .overlay nav .ov-quick svg{width:20px;height:20px;flex:none}
   .about-grid,.proj-body,.plan-grid,.col-head,.ter-grid,.vw-grid{grid-template-columns:1fr}
   .about-mark{aspect-ratio:16/10}.about-mark img{width:22%}
   /* no room beside the headline: the hero pins become a list beneath it */

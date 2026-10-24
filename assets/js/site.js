@@ -277,10 +277,15 @@
       '<a href="' + L.home + '">' + num() + 'Home</a>' +
       '<a href="' + L.about + '">' + num() + 'About Rare Earth</a>' +
       '<a href="' + L.projects + '">' + num() + 'Our Communities</a>' +
-      PROJ.map(function (p) { return '<a class="sub' + (current === p ? ' is-cur' : '') + '" href="' + href(p.url) + '"' + (current === p ? ' aria-current="page"' : '') + '>' + esc(p.name) + '</a>'; }).join('') +
+      PROJ.map(function (p) { return '<a class="sub' + (current === p ? ' is-cur' : '') + '" href="' + href(p.url) + '"' + (current === p ? ' aria-current="page"' : '') + '>' + esc(p.name) + (p.stage.key === 'now-selling' ? '<i>' + esc(p.stage.label) + '</i>' : '') + '</a>'; }).join('') +
       '<a href="' + L.standard + '">' + num() + 'Our Standard</a>' +
       '<a href="' + L.contactHub + '">' + num() + 'Contact</a>' +
       '<a href="' + (onHome ? '#viewing' : L.contactHub) + '" data-enquire="visit" data-source="menu">' + num() + 'Private Viewing</a>' +
+      // phones and tablets hide the aside, so the menu ends with one-tap contact instead
+      '<div class="ov-quick" aria-label="Quick contact">' +
+      (CFG.phones && CFG.phones[0] ? '<a href="tel:' + CFG.phones[0].tel + '">' + I.phone + '<span>Call</span></a>' : '') +
+      '<a href="' + waLink(waPrefill()) + '" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">' + I.wa.replace(/^<svg[^>]*>|<\/svg>$/g, '') + '</svg><span>WhatsApp</span></a>' +
+      '<a href="mailto:' + CFG.email + '">' + I.chat + '<span>Email</span></a></div>' +
       '</nav><aside><img class="vlogo" src="' + asset('logo-vertical-light.png') + '" alt="Rare Earth"><div>' +
       '<div style="margin-bottom:28px"><h6>Enquiries</h6>' + phonesHTML.slice(0, 2).join('') + '<a href="mailto:' + CFG.email + '">' + esc(CFG.email) + '</a></div>' +
       '<div><h6>Office</h6><p>' + (CFG.office.menu || []).map(esc).join('<br>') + '</p></div></div></aside></div>';
