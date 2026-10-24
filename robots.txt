@@ -1,0 +1,6 @@
+# Rare Earth Projects · https://www.rareearthprojects.com
+User-agent: *
+Allow: /
+Disallow: /projects/_template.html
+
+Sitemap: https://www.rareearthprojects.com/sitemap.xml

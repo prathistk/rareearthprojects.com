@@ -1,0 +1,61 @@
+{
+ "width": 1000,
+ "height": 1226,
+ "bounds": [
+  13.035,
+  77.525,
+  13.405,
+  77.835
+ ],
+ "projection": "equirectangular, cos(lat0) scaled",
+ "pins": [
+  {
+   "slug": "montira",
+   "name": "Montira",
+   "lat": 13.3416197,
+   "lon": 77.6995568,
+   "left": 56.31,
+   "top": 17.13
+  },
+  {
+   "slug": "athena",
+   "name": "Athena",
+   "lat": 13.1788728,
+   "lon": 77.7599626,
+   "left": 75.79,
+   "top": 61.12
+  },
+  {
+   "slug": "serenity",
+   "name": "Serenity",
+   "lat": 13.141979,
+   "lon": 77.729257,
+   "left": 65.87,
+   "top": 71.09
+  },
+  {
+   "slug": "tranquility",
+   "name": "Tranquility",
+   "lat": 13.1503397,
+   "lon": 77.5698767,
+   "left": 14.48,
+   "top": 68.83
+  },
+  {
+   "slug": "arcadia",
+   "name": "Arcadia",
+   "lat": 13.2108,
+   "lon": 77.6585,
+   "left": 43.06,
+   "top": 52.49
+  },
+  {
+   "slug": "elysia",
+   "name": "Elysia",
+   "lat": 13.163542,
+   "lon": 77.632058,
+   "left": 34.54,
+   "top": 65.27
+  }
+ ]
+}

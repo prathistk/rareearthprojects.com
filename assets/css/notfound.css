@@ -1,0 +1,13 @@
+/* =====================================================================
+   Rare Earth Projects · notfound.css  (404.html only)
+   Reuses the landing hero (.hero, .hero-field, .hero-pins) from site.css.
+   ===================================================================== */
+.nf-hero .hero-field path{opacity:.36}
+.nf-in h1{max-width:none}
+.nf-hint{margin-top:22px;font-size:1rem;color:var(--mute-d)}
+.nf-hint a{color:var(--ivory);border-bottom:1px solid rgba(202,167,115,.5);padding-bottom:2px;transition:color .3s}
+.nf-hint a em{font-family:var(--serif);font-size:1.3em;color:var(--gold-hi)}
+.nf-hint a:hover{color:var(--gold-hi)}
+@media (max-width:640px){
+  .nf-in h1{font-size:clamp(2.8rem,13vw,4rem)}
+}

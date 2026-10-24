@@ -1,0 +1,132 @@
+/* =====================================================================
+   Rare Earth Projects · montira.css  (Montira page only)
+   Palmeraie identity inside the Rare Earth brand: obsidian base, sand
+   paper bands, terracotta (#b5653f) and palm olive (#6b7443) as quiet
+   secondary accents. Gold stays the colour of every call to action.
+   Motifs: arch-topped (Marrakesh) frames, terracotta contour lines at
+   30%, the 229-palm field.
+   ===================================================================== */
+[data-project="montira"]{--terra:#b5653f;--terra-hi:#d0855e;--olive:#6b7443;--sand-p:#efe4d2}
+
+/* paper bands: terracotta italics, warm hairlines */
+[data-project="montira"] .p-paper .display em{color:var(--terra)}
+[data-project="montira"] .p-paper{--line:rgba(74,46,26,.16)}
+
+/* hero: warmer fall-off into the page */
+[data-project="montira"] .mt-hero .proj-cover::after{background:linear-gradient(180deg,rgba(13,12,10,.72) 0%,rgba(13,12,10,.06) 30%,rgba(36,20,11,.16) 62%,var(--obsidian) 100%)}
+.mt-hero .kicker{display:inline-flex;align-items:center;gap:14px}
+.mt-hero .kicker::before{content:"";width:28px;height:1px;background:var(--terra-hi)}
+.mt-hero .p-logo img{filter:drop-shadow(0 2px 20px rgba(13,12,10,.6))}
+
+/* overview spacing (was inline in the template) */
+.mt-overview{padding-bottom:clamp(90px,12vh,150px)}
+
+/* ---------- terracotta contour dividers ---------- */
+.mt-contours{position:absolute;left:0;top:0;width:100%;height:clamp(320px,40vw,520px);pointer-events:none;z-index:0;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.6) 45%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.6) 45%,transparent 100%)}
+.mt-contours path{fill:none;stroke:var(--terra);stroke-width:1;opacity:.3;vector-effect:non-scaling-stroke}
+.mt-contours.low path{opacity:.18}
+.mt-story>.wrap,.mt-amen>.wrap{position:relative;z-index:1}
+.mt-story .accent-rule{margin-top:0}
+
+/* ---------- arches ---------- */
+.mt-arch{position:relative;padding:10px 10px 0}
+.mt-arch::before{content:"";position:absolute;inset:0;border:1px solid rgba(208,133,94,.55);border-bottom:0;border-radius:999px 999px 0 0;pointer-events:none;transition:border-color .6s}
+.mt-arch .arch{position:relative;background:var(--ash)}
+.mt-arch img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(1.04) brightness(.92) sepia(.05);transform:scale(1.04);transition:transform 1.6s var(--ease),filter 1s}
+
+/* arcade of three */
+.mt-arcade{display:grid;grid-template-columns:1fr 1.18fr 1fr;gap:clamp(16px,2.4vw,40px);align-items:end}
+.mt-arcade figure{cursor:zoom-in;outline-offset:6px}
+.mt-arcade .arch{aspect-ratio:3/4}
+.mt-arcade .tall .arch{aspect-ratio:3/4.35}
+.mt-arcade figure:hover img,.mt-arcade figure:focus-visible img{transform:scale(1);filter:none}
+.mt-arcade figure:hover .mt-arch::before{border-color:var(--terra-hi)}
+.mt-arcade figcaption{display:flex;align-items:baseline;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.mt-arcade figcaption i{font-family:var(--serif);font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--terra-hi)}
+
+/* five elements */
+.mt-el{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);margin-top:clamp(56px,8vh,90px)}
+.mt-el li{padding:30px clamp(10px,1.4vw,24px) 8px 0;border-right:1px solid var(--line)}
+.mt-el li+li{padding-left:clamp(10px,1.4vw,24px)}
+.mt-el li:last-child{border-right:0}
+.mt-el .i{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--terra-hi)}
+.mt-el b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(1.35rem,1.8vw,1.7rem);line-height:1.1;margin:14px 0 10px}
+.mt-el p{font-size:.9rem;color:var(--muted)}
+
+/* the 229-palm field */
+.mt-palms{display:grid;grid-template-columns:minmax(200px,1fr) 3.2fr;gap:clamp(24px,4vw,72px);align-items:center;margin-top:clamp(64px,10vh,120px);padding:clamp(34px,5vh,56px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mt-pn b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(4.6rem,9vw,8.4rem);line-height:.86;color:var(--gold-hi);letter-spacing:-.02em}
+.mt-pn span{display:block;margin-top:16px;font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+.mt-pn p{margin-top:12px;font-size:.88rem;color:var(--muted);max-width:26ch}
+.mt-field{width:100%;height:auto;display:block;overflow:visible}
+.mt-field use{color:var(--gold);opacity:.62;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .9s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0ms)}
+.mt-field use.t{color:var(--terra-hi);opacity:.95}
+.mt-field use.o{color:#9aa36b;opacity:.75}
+.mt-palms:not(.in) .mt-field use{opacity:0;transform:scale(.3)}
+.mt-field:hover use{opacity:.45}
+.mt-field:hover use.t{opacity:1}
+
+/* ---------- clubhouse lead ---------- */
+.mt-club{display:grid;grid-template-columns:auto 1fr;gap:8px clamp(18px,2.4vw,34px);align-items:center;padding:26px 0;margin:0 0 34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mt-club>b{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,5vw,4.6rem);line-height:.9;color:var(--gold-hi);white-space:nowrap}
+.mt-club>b small{font-size:.3em;letter-spacing:.14em;text-transform:uppercase;margin-left:4px;color:var(--muted);font-family:var(--sans);font-weight:500}
+.mt-club span{display:block;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+.mt-club p{margin-top:8px;font-size:.92rem;color:var(--muted);max-width:36ch}
+.mt-amen-art{position:sticky;top:calc(var(--hdr-offset) + var(--subnav-h) + 30px)}
+.mt-amen-art .arch{aspect-ratio:4/5}
+.mt-amen-art figcaption{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2)}
+
+/* ---------- layout band ---------- */
+[data-project="montira"] .mt-layout .pv{--pv-sheet:#f3ece0}
+
+@media (prefers-reduced-motion:reduce){
+  .mt-field use{transition-delay:0ms!important}
+  .mt-palms:not(.in) .mt-field use{opacity:.62;transform:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .mt-el{grid-template-columns:repeat(3,1fr)}
+  .mt-el li:nth-child(3){border-right:0}
+  .mt-el li:nth-child(4){padding-left:0}
+  .mt-el li:nth-child(n+4){border-top:1px solid var(--line)}
+  .mt-palms{grid-template-columns:1fr}
+  .mt-amen-art{position:relative;top:auto;max-width:520px}
+}
+@media (max-width:767px){
+  .mt-arcade{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-right:calc(var(--gut) * -1);padding-right:var(--gut);padding-bottom:6px;scrollbar-width:none}
+  .mt-arcade::-webkit-scrollbar{display:none}
+  .mt-arcade figure{flex:0 0 72%;scroll-snap-align:start}
+  .mt-arcade .tall .arch{aspect-ratio:3/4}
+  .mt-el{grid-template-columns:1fr}
+  .mt-el li{display:grid;grid-template-columns:34px 1fr;gap:2px 10px;padding:18px 0!important;border-right:0!important;border-top:0!important;border-bottom:1px solid var(--line)}
+  .mt-el li .i{grid-row:1/3;padding-top:2px}
+  .mt-el b{margin:0}
+  .mt-palms{gap:22px}
+  .mt-pn{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:end}
+  .mt-pn b{grid-row:1/3}
+  .mt-pn span{margin-top:0}
+  .mt-pn p{margin-top:0}
+  .mt-club{grid-template-columns:1fr}
+}
+
+/* ---------- 360° drone view (click to load the Google Maps photo sphere) ---------- */
+.pano{position:relative;margin:0;aspect-ratio:16/9;background:var(--coal);overflow:hidden;border:1px solid var(--hair-d)}
+.pano-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.62);transform:scale(1.03);transition:transform 1.6s var(--ease),filter 1s}
+.pano:hover .pano-poster{transform:scale(1);filter:saturate(.95) brightness(.7)}
+.pano-go{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:var(--ivory);cursor:pointer;width:100%;background:none;border:0}
+.pano-ring{display:flex;width:96px;height:96px;align-items:center;justify-content:center;border-radius:50%;background:rgba(13,12,10,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--gold-hi);transition:transform .5s var(--ease),background .4s}
+.pano-ring svg{width:64px;height:64px}
+.pano-go:hover .pano-ring,.pano-go:focus-visible .pano-ring{transform:scale(1.06);background:rgba(13,12,10,.65)}
+.pano-l{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;font-weight:500;padding:14px 24px;border:1px solid rgba(244,239,230,.4);border-radius:var(--r-btn,3px);background:rgba(13,12,10,.35)}
+.pano iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pano figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 18px;font-size:.72rem;color:var(--mute-d);background:linear-gradient(0deg,rgba(13,12,10,.85),rgba(13,12,10,0));pointer-events:none}
+.pano figcaption a{pointer-events:auto;color:var(--gold);margin-left:6px}
+.pano.is-live figcaption{background:none;position:static;padding:12px 0 0;background:transparent}
+.pano.is-live{overflow:visible;aspect-ratio:auto}
+.pano.is-live .pano-frame{position:relative;aspect-ratio:16/9}
+@media (max-width:767px){.pano{aspect-ratio:4/5}.pano.is-live .pano-frame{aspect-ratio:4/5}}
+
+/* neighbourhood band (shared .nbh in project.css): Montira's terracotta-on-umber */
+.mt-nbh{--nb-1:#1b140f;--nb-2:#2a1f17;--nb-acc:#d6a07c;--nb-em:#e9c6aa}

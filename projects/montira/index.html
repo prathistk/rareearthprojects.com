@@ -1,0 +1,384 @@
+<!doctype html>
+<!--
+  =====================================================================
+  RARE EARTH PROJECTS · MONTIRA · official project page
+  Reference implementation for every project page (copy this file, not
+  only _template.html). Paths assume projects/<slug>/index.html.
+  Shared:  assets/css/site.css + assets/css/project.css,
+           assets/js/projects-data.js, site.js, enquiry.js,
+           plan-viewer.js, project.js
+  Montira: assets/css/montira.css (Palmeraie identity),
+           assets/js/montira.js  (palm field, render caption fallback)
+  Facts live in assets/js/projects-data.js (RE_PROJECTS montira).
+  Static facts carry data-fact="key"; project.js also checks the
+  JSON-LD (Residence, Breadcrumb, FAQPage) against the data and the
+  visible FAQs. Keep FAQ text and FAQPage JSON-LD word for word equal.
+  =====================================================================
+-->
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove('no-js')</script>
+<title>Montira | Villa Plots at Nandi Hills | Rare Earth Projects</title>
+<meta name="description" content="Montira by Rare Earth Projects: 116 RERA-registered villa plots on 14.35 acres at the foothills of Nandi Hills, with 229 date palms and an 18,000 sq ft resort-style clubhouse. From ₹1.12 Cr*.">
+<link rel="canonical" href="https://www.rareearthprojects.com/projects/montira/">
+<meta name="theme-color" content="#0d0c0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rare Earth Projects">
+<meta property="og:title" content="Montira | Villa Plots at Nandi Hills">
+<meta property="og:description" content="116 RERA-registered villa plots at the foothills of Nandi Hills, inspired by the palm oases of Marrakesh.">
+<meta property="og:url" content="https://www.rareearthprojects.com/projects/montira/">
+<meta property="og:image" content="https://www.rareearthprojects.com/assets/montira/aerial-sm.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="Aerial view of Montira beneath Nandi Hills">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../assets/mark-gold.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../../assets/montira/gardens-sm.jpg" imagesrcset="../../assets/montira/gardens-sm.jpg 1200w, ../../assets/montira/gardens.jpg 2400w" imagesizes="100vw">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<link rel="stylesheet" href="../../assets/css/project.css">
+<link rel="stylesheet" href="../../assets/css/montira.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Rare Earth Projects","legalName":"Rarearth Projects Private Limited","url":"https://www.rareearthprojects.com/","logo":"https://www.rareearthprojects.com/assets/logo-vertical.png","email":"info@rareearthprojects.com","telephone":"+91-88841-50025","address":{"@type":"PostalAddress","streetAddress":"No. 2385, 2nd Floor, 60 Ft Road, E Block, Sahakarnagar","addressLocality":"Bengaluru","postalCode":"560092","addressRegion":"Karnataka","addressCountry":"IN"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Residence","name":"Montira","description":"116 villa plots on 14.35 acres at the foothills of Nandi Hills, with 229 date palms and an 18,000 sq ft resort-style clubhouse.","url":"https://www.rareearthprojects.com/projects/montira/","image":["https://www.rareearthprojects.com/assets/montira/aerial-sm.jpg","https://www.rareearthprojects.com/assets/montira/gardens-sm.jpg"],"address":{"@type":"PostalAddress","addressLocality":"Chikkasagarahalli, Nandi Hobli","addressRegion":"Karnataka","addressCountry":"IN"},"identifier":{"@type":"PropertyValue","propertyID":"Karnataka RERA","value":"PRM/KA/RERA/1254/460/PR/160525/007750"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Resort-style clubhouse (18,000 sq ft)","value":true},{"@type":"LocationFeatureSpecification","name":"Infinity pool & poolside deck","value":true},{"@type":"LocationFeatureSpecification","name":"Salon & spa","value":true},{"@type":"LocationFeatureSpecification","name":"Gymnasium, yoga & meditation","value":true},{"@type":"LocationFeatureSpecification","name":"Café & library","value":true},{"@type":"LocationFeatureSpecification","name":"Business lounge & conference","value":true},{"@type":"LocationFeatureSpecification","name":"Multipurpose hall & party lawn","value":true},{"@type":"LocationFeatureSpecification","name":"Amphitheatre","value":true},{"@type":"LocationFeatureSpecification","name":"Guest rooms","value":true},{"@type":"LocationFeatureSpecification","name":"Sports court & cricket net","value":true},{"@type":"LocationFeatureSpecification","name":"Half basketball court","value":true},{"@type":"LocationFeatureSpecification","name":"Children's play & activity centre","value":true},{"@type":"LocationFeatureSpecification","name":"Senior citizens' corner","value":true}],"containedInPlace":{"@type":"Place","name":"Nandi Hills, Karnataka"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.rareearthprojects.com/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.rareearthprojects.com/projects/"},{"@type":"ListItem","position":3,"name":"Montira","item":"https://www.rareearthprojects.com/projects/montira/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where exactly is Montira?", "acceptedAnswer": {"@type": "Answer", "text": "Montira is at Chikkasagarahalli in Nandi Hobli, at the foothills of Nandi Hills. Nandi Hills is about 10 minutes away, Chanakya University about 8 minutes, the STRR about 12 minutes and Kempegowda International Airport about 25 minutes."}}, {"@type": "Question", "name": "What plot sizes are available?", "acceptedAnswer": {"@type": "Answer", "text": "The approved layout has 116 villa plots: 21 plots of 50 × 80 ft (4,000 sq ft), 18 plots of 40 × 60 ft (2,400 sq ft), 12 plots of 30 × 50 ft (1,500 sq ft) and 65 individually shaped plots. One commercial plot of 1,221 sq m is also set aside within the layout."}}, {"@type": "Question", "name": "What does a plot cost?", "acceptedAnswer": {"@type": "Answer", "text": "Plots start from ₹1.12 Cr*. Prices are indicative and subject to availability; registration, stamp duty and other charges are extra. Ask us for the current price of a specific plot."}}, {"@type": "Question", "name": "Is Montira RERA registered?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Montira is registered with Karnataka RERA under PRM/KA/RERA/1254/460/PR/160525/007750, which you can verify on rera.karnataka.gov.in."}}, {"@type": "Question", "name": "When can I register my plot?", "acceptedAnswer": {"@type": "Answer", "text": "Registration at Montira is from December 2025. Our team takes you through the documents and the registration itself."}}, {"@type": "Question", "name": "What will the clubhouse have?", "acceptedAnswer": {"@type": "Answer", "text": "The 18,000 sq ft resort-style clubhouse brings together an infinity pool and poolside deck, a salon and spa, a gymnasium with yoga and meditation, a café and library, a business lounge and conference room, a multipurpose hall and party lawn, an amphitheatre and guest rooms. The amenities planned at Montira also include a sports court and cricket net, a half basketball court, a children's play and activity centre and a senior citizens' corner."}}, {"@type": "Question", "name": "How much of Montira is open space?", "acceptedAnswer": {"@type": "Answer", "text": "Four landscaped parks cover 12,187 sq m, about 21.3% of the site; the largest is 8,149 sq m. 229 date palms set the character of the estate."}}, {"@type": "Question", "name": "How do I arrange a visit?", "acceptedAnswer": {"@type": "Answer", "text": "Viewings are by appointment. Send us a message on WhatsApp, call +91 88841 50025 or use the form on this page, and our team will host you on site."}}]}
+</script>
+</head>
+
+<body data-root="../../" data-page="project" data-project="montira" data-mode="dark" data-paper="light" data-hero="dark">
+<div data-site="header"></div>
+<noscript><nav class="wrap" style="padding:24px 0;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase"><a href="../../">Rare Earth Projects</a> · <a href="../">All projects</a> · <a href="../../contact/">Contact</a></nav></noscript>
+
+<main id="main">
+
+<!-- =============== HERO =============== -->
+<section class="proj dark p-hero mt-hero" id="top">
+  <div class="proj-cover">
+    <div class="media"><img src="../../assets/montira/gardens.jpg" srcset="../../assets/montira/gardens-sm.jpg 1200w, ../../assets/montira/gardens.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="Landscaped gardens at Montira beneath Nandi Hills" fetchpriority="high"></div>
+    <nav class="crumbs" aria-label="Breadcrumb"><ol class="wrap"><li><a href="../../">Home</a></li><li><a href="../">Projects</a></li><li aria-current="page">Montira</li></ol></nav>
+    <div class="ttl"><div class="wrap">
+      <div>
+        <span class="kicker rv">Flagship · Nandi Hills</span>
+        <h1 class="p-logo" data-autostart><img src="../../assets/logos/montira-on-dark.webp" width="1332" height="336" alt="Montira by Rare Earth" fetchpriority="high"></h1>
+        <p class="tagline rv d1">Inspired by Marrakesh, built in Nandi Hills. India's first Palmeraie-themed villa plots.</p>
+        <div class="hero-cta rv d2">
+          <button type="button" class="pill solid" data-enquire="visit" data-source="hero-visit">Arrange a private viewing</button>
+          <button type="button" class="link" data-enquire="brochure" data-source="hero-brochure">Request the brochure <span class="ln"></span></button>
+        </div>
+        <span class="micro rv d2">RERA · <span data-fact="rera">PRM/KA/RERA/1254/460/PR/160525/007750</span> · <a href="https://rera.karnataka.gov.in/" target="_blank" rel="noopener">rera.karnataka.gov.in</a></span>
+      </div>
+      <div class="facts rv d2"><div><b data-fact="plots">116</b><span>Villa plots</span></div><div><b data-fact="acres">14.35</b><span>Acres</span></div><div><b>18K</b><span>Sq ft club</span></div></div>
+    </div></div>
+  </div>
+</section>
+<!-- sticky sub-nav is inserted here by project.js -->
+
+<!-- =============== OVERVIEW =============== -->
+<section class="p-base mt-overview" id="overview" data-nav="Overview">
+  <div class="wrap">
+    <div class="proj-body">
+      <div class="rv">
+        <span class="kicker">The Estate</span>
+        <h2 class="display h-md">A Palmeraie at the <em>foot of the hills.</em></h2>
+        <p class="body-l">Montira (mon·teer·ah, a place that connects the mountains with the land) takes its cue from the date-palm oases of Marrakesh. It's a low-density estate of <span data-fact="plots">116</span> villa plots at the foothills of Nandi Hills, set among <span data-fact="palms">229</span> date palms, olive groves and shaded promenades.</p>
+        <p class="body-l">Cobblestone paths lead past terracotta courtyards to an <span data-fact="club">18,000 sq ft</span> resort-style clubhouse with an infinity pool, spa, library and guest rooms. It's a weekend retreat you can live in every day.</p>
+        <div data-auto="highlights"></div>
+        <div class="acts">
+          <button type="button" class="pill solid" data-enquire="visit" data-source="overview-visit">Arrange a viewing</button>
+          <a href="#layout" class="link">See the layout <span class="ln"></span></a>
+        </div>
+      </div>
+      <div class="rv d1"><div data-auto="specs"></div></div>
+    </div>
+    <div class="rv" data-auto="keys"></div>
+  </div>
+</section>
+
+<!-- =============== STORY · THE PALMERAIE =============== -->
+<section class="p-sec p-base mt-story" id="story" data-nav="Palmeraie">
+  <svg class="mt-contours" data-contours data-seed="3" data-count="22" data-cx="1180" data-cy="40" data-size="1500" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMin slice" aria-hidden="true"></svg>
+  <div class="wrap">
+    <span class="accent-rule" aria-hidden="true"></span>
+    <div class="sec-head">
+      <div><span class="kicker rv">The Palmeraie</span><h2 class="display h-lg split"><span class="ln"><span>An oasis of</span></span><span class="ln"><span><em><span data-fact="palms">229</span> date palms.</em></span></span></h2></div>
+      <p class="body-l rv d1">Montira takes its cue from the palm oases of Marrakesh. Date palms, olive groves and shaded promenades frame the estate, and cobblestone paths lead past terracotta courtyards to the clubhouse.</p>
+    </div>
+
+    <div class="mt-arcade">
+      <figure class="rv" role="button" data-lightbox="mt-arcade" data-src="../../assets/montira/aerial.jpg" data-title="The estate from above" data-sub="Montira · Chikkasagarahalli, Nandi Hills" data-right="Site photograph" tabindex="0" aria-label="Open image: The estate from above">
+        <div class="mt-arch"><div class="arch"><img src="../../assets/montira/aerial-sm.jpg" width="1200" height="675" alt="The Montira estate from above, with Nandi Hills behind" loading="lazy" decoding="async"></div></div>
+        <figcaption><i>i.</i>The estate from above</figcaption>
+      </figure>
+      <figure class="rv d1 tall" role="button" data-lightbox="mt-arcade" data-src="../../assets/montira/gardens.jpg" data-title="The gardens" data-sub="Montira · Chikkasagarahalli, Nandi Hills" data-right="Site photograph" tabindex="0" aria-label="Open image: The gardens">
+        <div class="mt-arch"><div class="arch"><img src="../../assets/montira/gardens-sm.jpg" width="1200" height="675" alt="Ornamental grasses and pathways in the Montira gardens" loading="lazy" decoding="async"></div></div>
+        <figcaption><i>ii.</i>The gardens</figcaption>
+      </figure>
+      <figure class="rv d2" role="button" data-lightbox="mt-arcade" data-src="../../assets/montira/lawns.jpg" data-title="Under Nandi Hills" data-sub="Montira · Chikkasagarahalli, Nandi Hills" data-right="Site photograph" tabindex="0" aria-label="Open image: Under Nandi Hills">
+        <div class="mt-arch"><div class="arch"><img src="../../assets/montira/lawns-sm.jpg" width="1200" height="675" alt="Landscaped lawns with Nandi Hills in view" loading="lazy" decoding="async"></div></div>
+        <figcaption><i>iii.</i>Under Nandi Hills</figcaption>
+      </figure>
+    </div>
+
+    <ol class="mt-el" aria-label="Elements of the Palmeraie">
+      <li class="rv"><span class="i" aria-hidden="true">i.</span><b>Date palms</b><p><span data-fact="palms">229</span> of them, the signature of the estate.</p></li>
+      <li class="rv d1"><span class="i" aria-hidden="true">ii.</span><b>Olive groves</b><p>Silver-green shade, borrowed from the gardens of Morocco.</p></li>
+      <li class="rv d2"><span class="i" aria-hidden="true">iii.</span><b>Shaded promenades</b><p>Made for the slow evening walk.</p></li>
+      <li class="rv d3"><span class="i" aria-hidden="true">iv.</span><b>Cobblestone paths</b><p>Leading past the courtyards to the clubhouse.</p></li>
+      <li class="rv d3"><span class="i" aria-hidden="true">v.</span><b>Terracotta courtyards</b><p>Warm earth underfoot, Marrakesh in colour.</p></li>
+    </ol>
+
+    <div class="mt-palms rv">
+      <div class="mt-pn"><b data-count="229">229</b><span>Date palms</span><p>One mark for every palm in the Palmeraie.</p></div>
+      <svg class="mt-field" data-palms="229" viewBox="0 0 1000 300" role="img" aria-label="229 date palms, drawn as one mark for each palm"></svg>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LAYOUT (plan viewer) =============== -->
+<section class="p-sec p-paper mt-layout" id="layout" data-nav="Layout" data-requires="plan">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">The Layout</span><h2 class="display h-lg split"><span class="ln"><span>Planned around</span></span><span class="ln"><span><em>the palms.</em></span></span></h2></div>
+      <p class="body-l rv d1">Zoom in to read individual plots, and use the key to find your way around the estate. The plan is drawn from the approved layout.</p>
+    </div>
+    <div class="layout-open rv"><button type="button" class="pill" data-layout-open aria-controls="layout-plan" aria-expanded="false"><span>View the layout plan</span></button><small>Zoom in to read every plot</small></div>
+    <div id="layout-plan" data-layout-reveal hidden>
+      <div data-plan-viewer></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PLOTS & PRICES =============== -->
+<section class="p-sec p-paper" id="plots" data-nav="Plots" data-requires="plots" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">Plot sizes</span><h2 class="display h-md split"><span class="ln"><span>Plots &amp; <em>prices.</em></span></span></h2></div>
+      <p class="body-l rv d1">Three standard formats and 65 individually shaped plots, all set out on the approved layout. Ask us for the current price and availability of any plot.</p>
+    </div>
+    <div class="rv" data-auto="plots"></div>
+  </div>
+</section>
+
+<!-- =============== AMENITIES · THE CLUBHOUSE =============== -->
+<section class="p-sec p-base mt-amen" id="amenities" data-nav="Amenities" data-requires="amenities">
+  <svg class="mt-contours low" data-contours data-seed="9" data-count="18" data-cx="120" data-cy="60" data-size="1300" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMin slice" aria-hidden="true"></svg>
+  <div class="wrap amen-grid">
+    <div class="rv">
+      <span class="kicker">Montira · Clubhouse &amp; Grounds</span>
+      <h2 class="display h-md" style="margin:24px 0 20px">Resort living, <em>every day.</em></h2>
+      <p class="body-l" style="margin-bottom:34px">Twenty amenities planned around the palms, for the whole family, at every stage of life.</p>
+      <div class="mt-club">
+        <b data-fact="club">18,000<small> sq ft</small></b>
+        <div><span>Resort-style clubhouse</span><p>An infinity pool, spa, library and guest rooms at the heart of the estate.</p></div>
+      </div>
+      <div data-auto="amenities"></div>
+    </div>
+    <figure class="mt-amen-art rv d1">
+      <div class="mt-arch"><div class="arch"><img src="../../assets/montira/clubhouse-dusk-sm.jpg" srcset="../../assets/montira/clubhouse-dusk-sm.jpg 1200w, ../../assets/montira/clubhouse-dusk.jpg 2000w" sizes="(max-width:767px) 100vw, 40vw" alt="The proposed Montira clubhouse at dusk, an architect's render" loading="lazy" decoding="async" style="object-position:31% 50%"></div></div>
+      <figcaption>The proposed clubhouse · architect's render · indicative</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- =============== INFRASTRUCTURE =============== -->
+<section class="p-sec p-coal" id="infrastructure" data-nav="Infrastructure" data-requires="landuse">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">Infrastructure</span><h2 class="display h-md split"><span class="ln"><span>Built before</span></span><span class="ln"><span><em>it's sold.</em></span></span></h2></div>
+      <p class="body-l rv d1">Roads, drainage, power, water, parks and gated security are in place, not just shown in brochures. At Montira, a fifth of the land is given to parks.</p>
+    </div>
+    <div class="rv" data-auto="landuse"></div>
+  </div>
+</section>
+
+<!-- =============== NEIGHBOURHOOD (Elysia format; research 23 Oct 2026, road distances from OpenStreetMap routing) =============== -->
+<section class="p-sec ill-sec nbh mt-nbh" id="neighbourhood" data-nav="Neighbourhood">
+  <svg class="ill-contours" data-contours data-seed="21" data-count="18" data-cx="200" data-cy="20" data-size="1300" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMin slice" aria-hidden="true"></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">The Neighbourhood</span><h2 class="display h-lg split"><span class="ln"><span>At the foot of</span></span><span class="ln"><span><em>Nandi Hills.</em></span></span></h2></div>
+      <p class="body-l rv d1">Montira sits in the resort country at the base of Nandi Hills, where Prestige Golfshire with its JW Marriott, Mulberry Shades and Discovery Village have made a weekend destination. Nandi Hills Road runs past the site, <span class="nw">NH-44</span> and the Satellite Town Ring Road are a short drive away, and the airport is about 23 km by road.</p>
+    </div>
+
+    <div class="nb-transit rv">
+      <div><b>1.6 km</b><span>To Nandi Hills Road (<span class="nw">SH-104</span>)</span></div>
+      <div><b>4 km</b><span>To <span class="nw">NH-44</span> at Hosahudya, by village road</span></div>
+      <div><b>12 km</b><span>To the Satellite Town Ring Road (<span class="nw">NH-648</span>)</span></div>
+      <div><b>23 km</b><span>To Kempegowda International Airport</span></div>
+    </div>
+
+    <div class="nb-scenes">
+      <figure class="rv"><img src="../../assets/montira/lawns-sm.jpg" srcset="../../assets/montira/lawns-sm.jpg 1200w, ../../assets/montira/lawns.jpg 2400w" sizes="(max-width:767px) 100vw, 50vw" width="2400" height="1350" alt="Lawns at Montira with Nandi Hills behind" loading="lazy" decoding="async"><figcaption><span>Nandi Hills from Montira</span><i>Site photograph · Montira</i></figcaption></figure>
+      <figure class="rv d1"><img src="../../assets/stock/bengaluru-airport-t1-sm.jpg" srcset="../../assets/stock/bengaluru-airport-t1-sm.jpg 800w, ../../assets/stock/bengaluru-airport-t1.jpg 1600w" sizes="(max-width:767px) 100vw, 50vw" width="1600" height="900" alt="Terminal 1 of Kempegowda International Airport" loading="lazy" decoding="async"><figcaption><span>Kempegowda International Airport · about 23 km</span><i>Stock photograph · Joydeep Sensarma / Unsplash</i></figcaption></figure>
+    </div>
+
+    <div class="nb-lists">
+      <div class="rv">
+        <h3><i aria-hidden="true">✦</i> Getting around</h3>
+        <ul>
+          <li><span>Nandi Hills Road (<span class="nw">SH-104</span>)</span><b>About 1.6 km</b></li>
+          <li><span><span class="nw">NH-44</span> at Hosahudya, by village road</span><b>About 4 km</b></li>
+          <li><span>Satellite Town Ring Road, Devanahalli section (open since 2024)</span><b>About 12 km</b></li>
+          <li><span>Devanahalli town</span><b>About 13 km</b></li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <h3><i aria-hidden="true">✦</i> Around the hills</h3>
+        <ul>
+          <li><span>Mulberry Shades, a Marriott Tribute Portfolio resort</span><b>About 3 km</b></li>
+          <li><span>Prestige Golfshire with JW Marriott Resort &amp; Spa</span><b>About 6 km</b></li>
+          <li><span>Bhoga Nandeeshwara Temple, Nandi village</span><b>About 6.5 km</b></li>
+          <li><span>Discovery Village resort</span><b>About 9 km</b></li>
+        </ul>
+      </div>
+      <div class="rv">
+        <h3><i aria-hidden="true">✦</i> Work</h3>
+        <ul>
+          <li><span>Chikkaballapura KIADB Industrial Area</span><b>About 13 km</b></li>
+          <li><span>Foxconn's plant near Devanahalli</span><b>About 15 km</b></li>
+          <li><span>Hi-Tech Defence &amp; Aerospace Park</span><b>About 21 km</b></li>
+          <li><span>Kempegowda International Airport</span><b>About 23 km</b></li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <h3><i aria-hidden="true">✦</i> Schools, colleges &amp; care</h3>
+        <ul>
+          <li><span>Nagarjuna College of Engineering &amp; Technology</span><b>About 7 km</b></li>
+          <li><span>Sri Madhusudan Sai Institute of Medical Sciences &amp; Research, with its hospital</span><b>About 9 km</b></li>
+          <li><span>SJCIT and the BGS campus, Chikkaballapur</span><b>About 11 km</b></li>
+          <li><span>Government Hospital, Devanahalli</span><b>About 13 km</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ph-note nb-src">Distances are approximate road distances from the site, from OpenStreetMap routing (October 2026). The Nandi Hills hilltop is reached by the ghat road, about 15 km by road. Names of other developments are given only to describe the area.</p>
+  </div>
+</section>
+
+<!-- =============== LOCATION =============== -->
+<section class="p-sec p-dark" id="location" data-nav="Location" data-requires="connectivity">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">Location</span><h2 class="display h-md split"><span class="ln"><span>A weekend retreat</span></span><span class="ln"><span><em>you can live in every day.</em></span></span></h2></div>
+      <p class="body-l rv d1">At the foothills of Nandi Hills, a short drive from Chanakya University, the STRR and Kempegowda International Airport.</p>
+    </div>
+    <div class="rv" data-auto="location"></div>
+  </div>
+</section>
+
+<!-- =============== GALLERY =============== -->
+<section class="p-sec p-base" id="gallery" data-nav="Gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">Gallery</span><h2 class="display h-md split"><span class="ln"><span>The estate, <em>in pictures.</em></span></span></h2></div>
+      <p class="body-l rv d1">Drone and site photographs of Montira, with the architect's renders of the proposed clubhouse and the layout plan drawn from the approved drawings.</p>
+    </div>
+    <div data-auto="gallery"></div>
+  </div>
+</section>
+
+<!-- =============== 360° DRONE VIEW =============== -->
+<section class="p-sec p-dark mt-pano" id="view360" data-nav="360° view">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">360° drone view</span><h2 class="display h-md split"><span class="ln"><span>Stand above Montira.</span></span><span class="ln"><span><em>Look around.</em></span></span></h2></div>
+      <p class="body-l rv d1">An interactive 360° drone photograph taken over the estate. Drag to turn, scroll or pinch to zoom: the laid-out roads and plots below, Nandi Hills on the horizon.</p>
+    </div>
+    <figure class="pano rv" data-pano="https://www.google.com/maps/embed?pb=!4v1760700000000!6m8!1m7!1sCIABIhBEyggkhM__j-oPvUlVThl-!2m2!1d13.3413113!2d77.7004821!3f200!4f0!5f0.7820865974627469">
+      <img class="pano-poster" src="../../assets/montira/aerial-sm.jpg" srcset="../../assets/montira/aerial-sm.jpg 1200w, ../../assets/montira/aerial.jpg 2400w" sizes="(max-width:767px) 100vw, 92vw" width="2400" height="1350" alt="Aerial photograph of Montira beneath Nandi Hills" loading="lazy" decoding="async">
+      <button type="button" class="pano-go" aria-label="Load the interactive 360 degree drone view of Montira">
+        <span class="pano-ring" aria-hidden="true"><svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1"/><path d="M12 25c3 4 7 6 12 6s9-2 12-6M33 27l3-2-1 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><text x="24" y="21" text-anchor="middle" font-size="9" font-family="Manrope, sans-serif" fill="currentColor" letter-spacing="1">360°</text></svg></span>
+        <span class="pano-l">Explore in 360°</span>
+      </button>
+      <figcaption>Drone photo sphere of Montira, hosted on Google Maps. Loading it connects to Google. <a href="https://maps.app.goo.gl/JW2fv7s9GDUPxeXS8" target="_blank" rel="noopener">Open in Google Maps ↗</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- =============== APPROVALS =============== -->
+<section class="p-sec p-paper" id="approvals" data-nav="Approvals" data-requires="approvals">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">Approvals &amp; documents</span><h2 class="display h-md split"><span class="ln"><span>Titled &amp;</span></span><span class="ln"><span><em>registered.</em></span></span></h2></div>
+      <p class="body-l rv d1">Montira is registered with Karnataka RERA. Verify the registration yourself, or ask us for the full document set before your visit.</p>
+    </div>
+    <div class="rv" data-auto="approvals"></div>
+  </div>
+</section>
+
+<!-- =============== FAQs (mirror in FAQPage JSON-LD) =============== -->
+<section class="p-sec p-base" id="faqs" data-nav="FAQs">
+  <div class="wrap faq-grid">
+    <div class="sec-head">
+      <div><span class="kicker rv">FAQs</span><h2 class="display h-md split"><span class="ln"><span>Good questions,</span></span><span class="ln"><span><em>straight answers.</em></span></span></h2></div>
+      <p class="body-l rv d1">Anything else you would like to know about Montira? <button type="button" class="btn-txt faq-ask" data-enquire="general" data-source="faq-ask">Ask us directly →</button></p>
+    </div>
+    <div class="acc rv" data-acc>
+      <details open><summary>Where exactly is Montira?</summary><div class="acc-b"><p>Montira is at Chikkasagarahalli in Nandi Hobli, at the foothills of Nandi Hills. Nandi Hills is about 10 minutes away, Chanakya University about 8 minutes, the STRR about 12 minutes and Kempegowda International Airport about 25 minutes.</p></div></details>
+      <details><summary>What plot sizes are available?</summary><div class="acc-b"><p>The approved layout has 116 villa plots: 21 plots of 50 × 80 ft (4,000 sq ft), 18 plots of 40 × 60 ft (2,400 sq ft), 12 plots of 30 × 50 ft (1,500 sq ft) and 65 individually shaped plots. One commercial plot of 1,221 sq m is also set aside within the layout.</p></div></details>
+      <details><summary>What does a plot cost?</summary><div class="acc-b"><p>Plots start from ₹1.12 Cr*. Prices are indicative and subject to availability; registration, stamp duty and other charges are extra. Ask us for the current price of a specific plot.</p></div></details>
+      <details><summary>Is Montira RERA registered?</summary><div class="acc-b"><p>Yes. Montira is registered with Karnataka RERA under PRM/KA/RERA/1254/460/PR/160525/007750, which you can verify on rera.karnataka.gov.in.</p></div></details>
+      <details><summary>When can I register my plot?</summary><div class="acc-b"><p>Registration at Montira is from December 2025. Our team takes you through the documents and the registration itself.</p></div></details>
+      <details><summary>What will the clubhouse have?</summary><div class="acc-b"><p>The 18,000 sq ft resort-style clubhouse brings together an infinity pool and poolside deck, a salon and spa, a gymnasium with yoga and meditation, a café and library, a business lounge and conference room, a multipurpose hall and party lawn, an amphitheatre and guest rooms. The amenities planned at Montira also include a sports court and cricket net, a half basketball court, a children's play and activity centre and a senior citizens' corner.</p></div></details>
+      <details><summary>How much of Montira is open space?</summary><div class="acc-b"><p>Four landscaped parks cover 12,187 sq m, about 21.3% of the site; the largest is 8,149 sq m. 229 date palms set the character of the estate.</p></div></details>
+      <details><summary>How do I arrange a visit?</summary><div class="acc-b"><p>Viewings are by appointment. Send us a message on WhatsApp, call +91 88841 50025 or use the form on this page, and our team will host you on site.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PRIVATE VIEWING (#contact) =============== -->
+<section class="viewing" id="contact">
+  <div class="bg"><img src="../../assets/montira/lawns-sm.jpg" alt="" loading="lazy"></div>
+  <div class="wrap vw-grid">
+    <div>
+      <span class="kicker rv">By Appointment</span>
+      <h2 class="display h-lg split"><span class="ln"><span>Arrange a</span></span><span class="ln"><span><em>private viewing.</em></span></span></h2>
+      <p class="body-l rv">See the land for yourself. Our team will host you on site, walk you through the layout and documents, and answer every question without any pressure.</p>
+      <ul class="lines rv d1">
+        <li><small>Call</small><div><a href="tel:+918884150025">+91 88841 50025</a><br><a href="tel:+917996499499">+91 79964 99499</a><br><a href="tel:+918068352992">+91 80683 52992</a></div></li>
+        <li><small>Write</small><a href="mailto:info@rareearthprojects.com">info@rareearthprojects.com</a></li>
+        <li><small>WhatsApp</small><a href="https://wa.me/918884150025?text=Hello%20Rare%20Earth%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20Montira." target="_blank" rel="noopener">Message us directly</a></li>
+        <li><small>Site</small><span>Chikkasagarahalli, Nandi Hobli,<br>at the foothills of Nandi Hills</span></li>
+        <li><small>Office</small><span>Rarearth Projects Pvt. Ltd., No. 2385, 2nd Floor,<br>Next to Cauvery Public School, 60 Ft Road, E Block,<br>Sahakarnagar, Bengaluru 560092</span></li>
+      </ul>
+    </div>
+    <div class="form-card rv d1" data-enquiry-form data-intent="visit" data-source="project-contact">
+      <h3>Request a viewing</h3>
+      <p>Share a few details and our team will be in touch personally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EXPLORE OTHER COMMUNITIES =============== -->
+<section class="explore p-base" aria-labelledby="ex-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kicker rv">Explore other communities</span><h2 id="ex-h" class="display h-md split"><span class="ln"><span>More addresses,</span></span><span class="ln"><span><em>one standard.</em></span></span></h2></div>
+    </div>
+    <div data-auto="explore"></div>
+  </div>
+</section>
+
+<div data-auto="pfoot"></div>
+</main>
+<div data-site="footer"></div>
+
+<script src="../../assets/js/projects-data.js" defer></script>
+<script src="../../assets/js/site.js" defer></script>
+<script src="../../assets/js/enquiry.js" defer></script>
+<script src="../../assets/js/plan-viewer.js" defer></script>
+<script src="../../assets/js/project.js" defer></script>
+<script src="../../assets/js/montira.js" defer></script>
+</body>
+</html>

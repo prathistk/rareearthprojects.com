@@ -1,0 +1,137 @@
+{
+ "view": "plan",
+ "w": 1600,
+ "h": 2674,
+ "hotspots": [
+  {
+   "kind": "park",
+   "name": "Park 1 · 944.6 sq m",
+   "left": 39.1,
+   "top": 28.15
+  },
+  {
+   "kind": "park",
+   "name": "Park 2 · 952.7 sq m",
+   "left": 80.11,
+   "top": 52.42
+  },
+  {
+   "kind": "park",
+   "name": "Park 3 with the natural nala · 699.3 sq m",
+   "left": 18.85,
+   "top": 79.53
+  },
+  {
+   "kind": "nala",
+   "name": "Nala (natural stream) with 3 m green buffer",
+   "left": 9.7,
+   "top": 83.84
+  },
+  {
+   "kind": "ca",
+   "name": "Civic amenity · 948.45 sq m",
+   "left": 52.94,
+   "top": 31.14
+  },
+  {
+   "kind": "ca",
+   "name": "Civic amenity · 350.22 sq m",
+   "left": 82.12,
+   "top": 72.75
+  },
+  {
+   "kind": "shop",
+   "name": "Neighbourhood shop · 378.47 sq m",
+   "left": 64.76,
+   "top": 19.98
+  }
+ ],
+ "phases": [
+  {
+   "key": "phase-1",
+   "label": "Phase I",
+   "poly": [
+    [
+     76.06,
+     16.71
+    ],
+    [
+     59.52,
+     16.85
+    ],
+    [
+     59.46,
+     23.16
+    ],
+    [
+     11.14,
+     23.82
+    ],
+    [
+     10.34,
+     47.58
+    ],
+    [
+     10.41,
+     52.0
+    ],
+    [
+     10.41,
+     52.0
+    ],
+    [
+     10.61,
+     67.44
+    ],
+    [
+     10.13,
+     71.07
+    ],
+    [
+     84.73,
+     68.02
+    ],
+    [
+     81.53,
+     50.28
+    ]
+   ]
+  },
+  {
+   "key": "phase-2",
+   "label": "Phase II",
+   "poly": [
+    [
+     10.26,
+     71.07
+    ],
+    [
+     84.74,
+     68.03
+    ],
+    [
+     87.86,
+     86.1
+    ],
+    [
+     46.19,
+     85.6
+    ],
+    [
+     8.52,
+     87.12
+    ],
+    [
+     10.26,
+     71.07
+    ]
+   ]
+  }
+ ],
+ "planColors": {
+  "30x40": "#ecdfc4",
+  "30x50": "#ecdfc4",
+  "odd": "#ecdfc4"
+ },
+ "note": "Athena Phases I and II as one master plan, joined from the two phase drawings; plot numbers follow each phase's approved drawing."
+}

@@ -1,0 +1,62 @@
+{
+ "view": "plan",
+ "w": 1600,
+ "h": 2278,
+ "hotspots": [
+  {
+   "kind": "park",
+   "name": "Park 1 · 195.8 sq m",
+   "left": 39.12,
+   "top": 25.26
+  },
+  {
+   "kind": "park",
+   "name": "Park 2 · 932.5 sq m",
+   "left": 49.59,
+   "top": 43.72
+  },
+  {
+   "kind": "park",
+   "name": "Park 3 · 2,909.3 sq m",
+   "left": 81.42,
+   "top": 43.01
+  },
+  {
+   "kind": "park",
+   "name": "Park 4 · 8,149.3 sq m",
+   "left": 29.25,
+   "top": 73.87
+  },
+  {
+   "kind": "shop",
+   "name": "Commercial site 117 · 1,220.8 sq m",
+   "left": 27.12,
+   "top": 66.86
+  },
+  {
+   "kind": "gate",
+   "name": "Main entrance",
+   "left": 12.97,
+   "top": 36.92
+  },
+  {
+   "kind": "nala",
+   "name": "Nala (natural stream)",
+   "left": 79.79,
+   "top": 56.27
+  }
+ ],
+ "plotTypes": {
+  "50x80": 21,
+  "40x60": 18,
+  "30x50": 12,
+  "odd": 65
+ },
+ "planColors": {
+  "50x80": "#e6d7b8",
+  "40x60": "#ecdfc4",
+  "30x50": "#f2e9d6",
+  "odd": "#dccfb0"
+ },
+ "note": "Montira master plan drawn from the CAD-derived layout data; plot numbers follow the sanctioned plan."
+}

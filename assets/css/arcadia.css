@@ -1,0 +1,94 @@
+/* =====================================================================
+   Rare Earth Projects · arcadia.css  (Arcadia page only)
+   Arcadia: residential sites at Poojanahalli, next to SLK Tech Park.
+   Warm sand and approachable (the .a-arcadia art panel in site.css):
+   sand base #ece2cf, paper gradient #efe5d3 → #d9c3a0, umber ink
+   #4a3a22, gold-lo accents; one warm umber band for SLK Tech Park.
+   No logo file yet, so the H1 is a text wordmark: ARCADIA in the brand
+   serif with wide tracking, under a RARE EARTH hairline line.
+   Shared illustrative blocks live in project-ill.css.
+   ===================================================================== */
+[data-project="arcadia"]{--ar-ink:#3b2e1b;--ar-umber:#4a3a22;--ar-sand:#d9c3a0;--ar-sand-pale:#efe5d3}
+
+/* ---------- hero ---------- */
+.ar-hero{--wash:236,226,207}
+.ar-hero .ttl .kicker{color:#6f5530}
+.ar-hero .facts b{color:var(--ar-ink)}
+.proj.lightc.ar-hero .media>img.ill-r{filter:saturate(.8) contrast(.96) brightness(1.04) sepia(.14)}
+/* the render is warm and busy: a deeper sand wash on the copy side */
+.proj.lightc.ar-hero.has-render .proj-cover::after{background:linear-gradient(90deg,rgba(var(--wash),.95) 0%,rgba(var(--wash),.82) 30%,rgba(var(--wash),.3) 54%,rgba(var(--wash),0) 68%),linear-gradient(180deg,rgba(var(--wash),.8) 0%,rgba(var(--wash),0) 24%,rgba(var(--wash),0) 46%,rgba(var(--wash),.9) 78%,rgb(var(--wash)) 100%)}
+
+/* ---------- light bands ---------- */
+[data-project="arcadia"] .ill-contours path{stroke:var(--gold-lo);opacity:.3}
+[data-project="arcadia"] .accent-rule{background:linear-gradient(90deg,var(--gold-lo),rgba(156,123,73,0))}
+[data-project="arcadia"] :is(.p-base,.p-paper){--line:rgba(74,58,34,.16)}
+[data-project="arcadia"] .pv{--pv-sheet:#f6efe2}
+[data-project="arcadia"] .ill-frame{background:var(--ar-sand-pale)}
+
+/* ---------- first plot: guide + at-a-glance card ---------- */
+.ar-guide{display:grid;grid-template-columns:7fr 5fr;gap:clamp(30px,6vw,110px);align-items:start}
+.ar-acc summary{font-size:clamp(1.25rem,1.7vw,1.5rem)}
+.ar-acc details{scroll-margin-top:calc(var(--hdr-offset,0px) + var(--subnav-h,60px) + 24px)}
+.ar-acc details.flash summary{color:var(--gold-lo)}
+.ar-guide-note{margin-top:18px;line-height:1.8}
+.ar-card{position:sticky;top:calc(var(--hdr-offset,0px) + var(--subnav-h,60px) + 28px);background:rgba(250,245,236,.62);border:1px solid var(--line);border-top:2px solid var(--gold-lo);padding:clamp(24px,3vw,42px)}
+.ar-card .display{font-size:clamp(1.9rem,2.8vw,2.6rem);margin:14px 0 4px}
+.ar-checks{list-style:none;margin-top:22px;border-top:1px solid var(--line)}
+.ar-checks li{border-bottom:1px solid var(--line)}
+.ar-checks a{display:flex;align-items:center;gap:16px;min-height:48px;padding:12px 0;font-size:1rem;color:inherit;transition:color .3s}
+.ar-checks a::before{content:"";flex:none;width:7px;height:13px;margin:0 5px 4px 6px;border-right:1.5px solid var(--gold-lo);border-bottom:1.5px solid var(--gold-lo);transform:rotate(45deg)}
+.ar-checks a::after{content:"";margin-left:auto;flex:none;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);opacity:0;transition:opacity .3s,transform .3s}
+.ar-checks a:hover,.ar-checks a:focus-visible,.ar-checks a[aria-current="true"]{color:#6f5530}
+.ar-checks a:hover::after,.ar-checks a:focus-visible::after,.ar-checks a[aria-current="true"]::after{opacity:.7}
+.ar-checks-hint{margin-top:10px;font-size:.78rem;color:var(--muted-2)}
+.ar-price{display:grid;gap:4px;margin-top:24px}
+.ar-price small{font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted-2)}
+.ar-price b{font-family:var(--serif);font-weight:400;font-size:1.7rem;line-height:1.1}
+.ar-price span{font-size:.84rem;color:var(--muted)}
+.ar-card .acts{margin-top:26px;gap:16px 26px}
+
+/* ---------- next to SLK Tech Park (warm umber band) ---------- */
+[data-project="arcadia"] .ar-tech.p-dark{background:linear-gradient(160deg,#33281a,#1b140c)}
+.ar-tech .ill-contours path{stroke:var(--ar-sand);opacity:.1}
+.ar-adj{display:grid;grid-template-columns:7fr 5fr;gap:clamp(30px,6vw,110px);align-items:center}
+.ar-adj-fig{margin:0}
+.ar-adj-fig>svg{display:block;width:100%;height:auto;overflow:visible}
+/* the contour fill inside "The sites" is a nested <svg>: it keeps its own x/y/width/height */
+.ar-adj-fig svg.aj-cn{overflow:hidden}
+.aj-site{fill:rgba(217,195,160,.12);stroke:var(--ar-sand);stroke-width:1}
+.aj-cn path{fill:none;stroke:var(--ar-sand);stroke-width:1;opacity:.22;vector-effect:non-scaling-stroke}
+.aj-park{fill:rgba(202,167,115,.04);stroke:rgba(202,167,115,.55);stroke-width:1;stroke-dasharray:4 5}
+.aj-blocks rect{fill:rgba(244,239,230,.03);stroke:rgba(244,239,230,.26);stroke-width:1}
+.aj-k{font-family:var(--sans);font-size:10px;letter-spacing:.3em;fill:rgba(244,239,230,.55)}
+.aj-n{font-family:var(--serif);font-style:italic;font-size:27px;fill:var(--ivory)}
+.aj-wm{font-family:var(--serif);font-size:24px;letter-spacing:.34em;fill:var(--ivory)}
+.aj-edge{fill:none;stroke:var(--gold);stroke-width:2;stroke-dasharray:300;stroke-dashoffset:0;transition:stroke-dashoffset 1.8s var(--ease) .3s}
+.rv:not(.in) .aj-edge{stroke-dashoffset:300}
+.aj-tag{fill:var(--gold)}
+.aj-tt{font-family:var(--sans);font-size:9.5px;letter-spacing:.22em;font-weight:600;fill:var(--obsidian)}
+.aj-nts{font-family:var(--sans);font-size:9px;letter-spacing:.24em;fill:rgba(244,239,230,.35)}
+.ar-adj-fig figcaption{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.ar-adj .acts{margin-top:30px;gap:18px 30px}
+.ar-tech .ill-rows b{color:var(--ivory)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .ar-guide,.ar-adj{grid-template-columns:1fr}
+  .ar-card{position:static}
+}
+@media (max-width:767px){
+  .proj.lightc.ar-hero.has-render .proj-cover::after{background:linear-gradient(180deg,rgba(var(--wash),.86) 0%,rgba(var(--wash),.2) 17%,rgba(var(--wash),.5) 31%,rgba(var(--wash),.9) 43%,rgb(var(--wash)) 62%)}
+  .ar-card{padding:24px 20px}
+  /* the diagram scales to ~56%: keep its type legible */
+  .aj-n{font-size:36px}
+  .aj-wm{font-size:30px;letter-spacing:.26em}
+  .aj-k{font-size:17px;letter-spacing:.2em}
+  .aj-tt{font-size:13px;letter-spacing:.12em}
+  .aj-nts{font-size:14px;letter-spacing:.16em}
+}
+@media (prefers-reduced-motion:reduce){
+  .aj-edge{transition:none;stroke-dashoffset:0!important}
+}
+
+/* neighbourhood band (shared .nbh in project.css): Arcadia's sandstone on umber */
+.ar-nbh{--nb-1:#2a2117;--nb-2:#3b2e1b;--nb-acc:#d9c3a0;--nb-em:#efe5d3}

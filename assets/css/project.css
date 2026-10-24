@@ -1,0 +1,284 @@
+/* =====================================================================
+   Rare Earth Projects · project.css  (shared by every project page)
+   Load after site.css:  <link rel="stylesheet" href="../../assets/css/project.css">
+   Styles the blocks built by assets/js/project.js that site.css does not
+   already cover: key tiles, plot mix + scale drawing, plots table rows,
+   land-use bars, drive-time list, gallery filter, explore strip, FAQ
+   grid, sub-nav refinements. Uses the context tokens from site.css
+   (--line, --muted, --muted-2) so every block reads on dark and light.
+   Project identity (colours, motifs) belongs in assets/css/<slug>.css.
+   ===================================================================== */
+
+/* ---------- key tiles ---------- */
+.key b.sm{font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.1}
+
+/* ---------- section head with a single column ---------- */
+.sec-head .body-l+.acts{margin-top:28px}
+
+/* ---------- plots: mix bar + formats to scale ---------- */
+.pvis{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:end;margin:0 0 clamp(30px,4vh,46px);padding:clamp(22px,2.4vw,34px);border:1px solid var(--line)}
+.pvis.one{grid-template-columns:1fr}
+.pmix figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:16px}
+.pm-k{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--muted-2)}
+.pm-t{font-size:.86rem;color:var(--muted)}
+.pm-t b{font-family:var(--serif);font-weight:400;font-size:1.6rem;color:inherit;margin-right:4px;line-height:1}
+:is(.p-base,.p-paper,.p-dark,.p-coal) .pm-t b{color:currentColor}
+.pm-bar{display:flex;gap:2px;height:16px}
+.pm-seg{display:block;min-width:4px;box-shadow:inset 0 0 0 1px rgba(13,12,10,.18);transform-origin:left;transition:transform 1.2s var(--ease)}
+.rv:not(.in) .pm-seg{transform:scaleX(0)}
+.pm-key{list-style:none;margin-top:18px;border-top:1px solid var(--line)}
+.pm-key li{display:grid;grid-template-columns:18px 1fr auto 44px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.pm-sw{width:18px;height:12px;display:block;box-shadow:inset 0 0 0 1px rgba(13,12,10,.2)}
+.pm-key b{font-family:var(--serif);font-weight:400;font-size:1.2rem;line-height:1}
+.pm-key i{font-style:normal;font-size:.72rem;color:var(--muted-2);text-align:right}
+.pscale{margin:0}
+.pscale svg{width:100%;height:auto;display:block;overflow:visible;max-height:300px}
+.pscale rect{stroke:rgba(13,12,10,.4);stroke-width:.35}
+.pscale .ps-dim,.pscale .ps-ground{fill:none;stroke:currentColor;stroke-width:.35;opacity:.45}
+.pscale .ps-ground{opacity:.25;stroke-dasharray:1.5 1.5}
+.pscale text{fill:currentColor;font-family:var(--sans)}
+.pscale .ps-t{font-size:3.6px;letter-spacing:.06em;opacity:.7}
+.pscale .ps-a{font-family:var(--serif);font-size:7px;fill:#0d0c0a}
+.pscale .ps-u{font-size:3px;letter-spacing:.2em;text-transform:uppercase;fill:#0d0c0a;opacity:.7}
+.pscale .ps-c{font-size:3.6px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.pscale figcaption{margin-top:14px;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-2)}
+
+/* ---------- plots table (row headers + swatches) ---------- */
+.ptable tbody th.fmt{text-align:left;font-family:var(--serif);font-size:1.5rem;font-weight:400;white-space:nowrap;padding:22px 16px 22px 0;border-bottom:1px solid var(--line);letter-spacing:0;text-transform:none;color:inherit;vertical-align:middle}
+.ptable tbody th.fmt small{font-size:.55em}
+.ptable .pt-sw{display:inline-block;width:12px;height:12px;margin-right:14px;vertical-align:.12em;box-shadow:inset 0 0 0 1px rgba(13,12,10,.22)}
+.ptable td.pr.por{font-style:italic;color:var(--muted)}
+.ptable td.ct{white-space:nowrap}
+.ptable tbody tr{transition:background .4s}
+.ptable tbody tr:hover{background:rgba(202,167,115,.06)}
+
+/* ---------- amenities ---------- */
+.am-total{margin-top:18px;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-2)}
+
+/* ---------- land use ---------- */
+.lu{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(30px,5vw,90px);align-items:start}
+.lu-head{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.lu-head p{font-size:.98rem;color:var(--muted)}
+.lu-head b{font-family:var(--serif);font-weight:400;font-size:1.5rem;color:var(--gold-hi)}
+:is(.light,.bone,.on-light,[data-mode="light"] .p-base,[data-paper="light"] .p-paper) .lu-head b{color:var(--gold-lo)}
+.lu-bars{list-style:none;border-top:1px solid var(--line)}
+.lu-bars li{display:grid;grid-template-columns:minmax(120px,.8fr) 2fr minmax(110px,auto);gap:18px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.lu-n{font-size:.95rem}
+.lu-n small{display:block;font-size:.76rem;color:var(--muted)}
+.lu-b{display:block;height:10px;background:rgba(202,167,115,.08)}
+.lu-b i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--accent-2,var(--gold-lo)),var(--accent,var(--gold)));transform-origin:left;transition:transform 1.4s var(--ease)}
+.rv:not(.in) .lu-b i{transform:scaleX(0)}
+.lu-bars b{font-family:var(--serif);font-weight:400;font-size:1.25rem;text-align:right;line-height:1.1}
+.lu-bars b small{display:block;font-family:var(--sans);font-size:.7rem;color:var(--muted-2)}
+.lu-figs{list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
+.lu-figs li{padding:22px 0;border-bottom:1px solid var(--line)}
+.lu-figs b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,3.4vw,3.2rem);line-height:1}
+.lu-figs b small{font-size:.4em;margin-left:6px;letter-spacing:.06em}
+.lu-figs span{display:block;margin-top:10px;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-2)}
+.lu-note{grid-column:1/-1;margin-top:4px}
+
+/* ---------- location: drive-time list ---------- */
+.locm-side{min-width:0}
+.locm-list.big li{grid-template-columns:30px 1fr auto;padding:18px 0}
+.locm-list.big li b{font-size:clamp(2rem,3vw,2.8rem);line-height:1;text-align:right}
+.locm-list.big li b small{font-family:var(--sans);font-size:.24em;letter-spacing:.24em;text-transform:uppercase;margin-left:6px;color:var(--muted-2);vertical-align:.5em}
+.locm-list.big li b.tx{font-size:1.4rem}
+.locm-list.big li em{display:block;grid-column:3;font-style:normal;font-size:.72rem;color:var(--muted-2);text-align:right}
+.locm-list li{cursor:default;transition:background .3s}
+.locm-list li.on{background:linear-gradient(90deg,rgba(202,167,115,.08),transparent 80%)}
+.locm-map .mk-l:focus{outline:none}
+.locm-map .mk-l:focus-visible circle{stroke-width:2.5}
+
+/* ---------- gallery ---------- */
+.galw{position:relative}
+.gal-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.gal-f{display:flex;flex-wrap:wrap;gap:8px}
+.gal-f button{display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:0 16px;border:1px solid var(--line);font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:var(--muted-2);transition:color .3s,border-color .3s,background .3s}
+.gal-f button small{font-size:.92em;letter-spacing:.06em;opacity:.8}
+.gal-f button:hover{color:inherit;border-color:var(--gold-lo)}
+.gal-f button[aria-pressed="true"]{color:var(--obsidian);background:var(--gold);border-color:var(--gold)}
+.gal-n{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-2)}
+.gal figure{animation:fadeimg .6s var(--ease)}
+.gal figure:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+.gal figure::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(0deg,rgba(13,12,10,.55),transparent);pointer-events:none}
+.gal figure.sheet::after{display:none}
+.gal figcaption{z-index:1}
+
+/* ---------- explore other communities ---------- */
+.ex-card .ex-m:not(.sheet){background:var(--ash)}
+.ex-card .ex-st{position:absolute;inset:14px auto auto 14px;width:auto;height:auto;z-index:2;font-style:normal;font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500;padding:7px 10px;background:rgba(13,12,10,.78);color:var(--gold);border:1px solid rgba(202,167,115,.45)}
+.ex-card>em{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-style:normal;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);transition:color .4s}
+.ex-card>em span{transition:transform .5s var(--ease);color:var(--gold)}
+.ex-card:hover>em{color:inherit}
+.ex-card:hover>em span{transform:translateX(6px)}
+.ex-card:focus-visible{outline-offset:6px}
+
+/* ---------- FAQs ---------- */
+.faq-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,6vw,110px);align-items:start}
+.faq-grid .sec-head{margin-bottom:0;grid-template-columns:1fr;position:sticky;top:calc(var(--hdr-offset) + var(--subnav-h) + 40px)}
+.faq-grid .sec-head .body-l{margin-top:22px}
+.faq-ask{display:block;margin-top:6px}
+.faq-grid .acc summary{font-size:clamp(1.2rem,1.6vw,1.45rem)}
+
+/* ---------- sub-nav refinements ---------- */
+.subnav .sn-name{color:inherit;transition:color .3s}
+.subnav .sn-name:hover{color:var(--gold)}
+.sn-more>button.on{color:var(--ivory)}
+.sn-prog{background:linear-gradient(90deg,var(--accent,var(--gold)),var(--gold))}
+
+/* ---------- approvals ---------- */
+.ledger li>b{letter-spacing:.01em}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .pvis{grid-template-columns:1fr}
+  .lu{grid-template-columns:1fr}
+  .lu-figs{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .lu-figs li{padding-right:16px}
+  .faq-grid{grid-template-columns:1fr}
+  .faq-grid .sec-head{position:static;margin-bottom:clamp(30px,5vh,50px)}
+}
+@media (max-width:767px){
+  .ptable tbody th.fmt{display:block;grid-column:1;border:0;padding:0;font-size:1.4rem}
+  .ptable td.fc{grid-column:1/-1;font-size:.86rem;color:var(--muted)}
+  .key b.sm{font-size:1.3rem}
+  .ledger li>b.rn{font-size:1.12rem;letter-spacing:0}
+  .pvis{padding:18px 16px;border-left:0;border-right:0}
+  .pscale .ps-t,.pscale .ps-c{font-size:5.4px}
+  .pscale .ps-a{font-size:8.5px}
+  .pscale .ps-u{font-size:4px}
+  .lu-bars li{grid-template-columns:1fr auto;gap:8px 16px}
+  .lu-b{grid-column:1/-1;grid-row:2}
+  .locm-list.big li b{font-size:1.9rem}
+  .gal-bar{margin-bottom:16px}
+  .gal-f{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:calc(var(--gut) * -1);padding-right:var(--gut)}
+  .gal-f::-webkit-scrollbar{display:none}
+  .gal-f button{flex:none}
+  .gal-n{display:none}
+  .ex-card .ex-st{inset:10px auto auto 10px;font-size:.5rem;padding:6px 8px;letter-spacing:.2em}
+  .ex-card>em{letter-spacing:.16em}
+  .ex-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-right:calc(var(--gut) * -1);padding-right:var(--gut);scrollbar-width:none}
+  .ex-grid::-webkit-scrollbar{display:none}
+  .ex-grid>.ex-card{flex:0 0 68%;scroll-snap-align:start}
+  .ex-card .ex-m .art .wm span{font-size:min(1.15rem,8.4cqw);letter-spacing:.14em}
+  .ex-card .ex-m .art img.wmi{max-width:72%}
+  .ptable tbody th.fmt{display:flex;align-items:center}
+  .ex-nav{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+  .ex-nav>.link{grid-column:1/-1;grid-row:2;justify-self:start}
+  .ptable .pt-sw{vertical-align:middle}
+}
+
+/* ---------- folded layout plans (owner, 23 Oct 2026): a button reveals the viewer ---------- */
+.layout-open{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:6px}
+.layout-open .pill[aria-expanded="true"]{background:transparent}
+.layout-open small{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2,#8b8478)}
+[data-layout-reveal]{margin-top:clamp(28px,4vh,44px)}
+[data-layout-reveal][hidden]{display:none!important}
+
+/* ---------- hero H1: the project logo (Rare Earth logo beside the project name) ----------
+   Images in assets/logos/<slug>-on-dark|light.webp, 336px tall (2x). Sizing by max-height
+   keeps the Rare Earth half the same size on every project page. */
+.p-hero h1.p-logo{margin-top:22px;font-size:0;line-height:0;letter-spacing:0}
+.p-logo img{display:block;width:auto;height:auto;max-width:100%;max-height:clamp(104px,11vw,168px);transition:opacity 1.4s var(--ease),transform 1.4s var(--ease)}
+.p-logo:not(.in) img{opacity:0;transform:translateY(26px)}
+html.no-js .p-logo img{opacity:1;transform:none}
+@media (max-width:767px){
+  .p-hero h1.p-logo{margin-top:18px}
+  .p-logo img{max-height:104px}
+}
+@media (prefers-reduced-motion:reduce){
+  .p-logo img{transition:none}
+  .p-logo:not(.in) img{opacity:1;transform:none}
+}
+
+/* ---------- location: the real map on every project page (OpenStreetMap crop, like Tranquility) ---------- */
+.locm-map.rmap{margin:0;padding:0;background:none;border:0;aspect-ratio:auto}
+.rmap-in{position:relative;aspect-ratio:850/666;overflow:hidden;background:#100f0d;border:1px solid var(--hair-d)}
+.rmap-base{position:absolute;width:117.647%;max-width:none;height:auto}
+.rmap-pins{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+.rmap-pins .plate{fill:#100f0d}
+.rmap-pins .rmap-scale path{stroke:rgba(244,239,230,.7);stroke-width:1.6;fill:none}
+.rmap-pins .rmap-north path{fill:rgba(244,239,230,.7)}
+.rmap-pins .rmap-scale text,.rmap-pins .rmap-north text{font-family:var(--sans);font-size:15px;letter-spacing:1.4px;fill:rgba(244,239,230,.7)}
+.rmap-pins .rmap-pin .halo{fill:var(--gold);opacity:.16;transform-box:fill-box;transform-origin:center;animation:rmapPulse 3.2s var(--ease) infinite}
+.rmap-pins .rmap-pin rect{fill:#0d0c0a;stroke:var(--gold);stroke-width:1.6}
+.rmap-pins .rmap-pin text{font-family:var(--serif);font-size:22px;fill:var(--gold)}
+.rmap-pins .rmap-pin text.lb{font-style:italic;font-size:30px;fill:var(--ivory);paint-order:stroke;stroke:#100f0d;stroke-width:5px;stroke-linejoin:round}
+.rmap-pins .rmap-others a{cursor:pointer}
+.rmap-pins .rmap-others .hit{fill:transparent}
+.rmap-pins .rmap-others .dot{fill:rgba(244,239,230,.62);stroke:#100f0d;stroke-width:2;transition:fill .3s}
+.rmap-pins .rmap-others text{font-family:var(--serif);font-style:italic;font-size:23px;fill:rgba(244,239,230,.8);paint-order:stroke;stroke:#100f0d;stroke-width:4px;stroke-linejoin:round;transition:fill .3s}
+.rmap-pins .rmap-others a:hover .dot,.rmap-pins .rmap-others a:focus-visible .dot{fill:var(--gold)}
+.rmap-pins .rmap-others a:hover text,.rmap-pins .rmap-others a:focus-visible text{fill:var(--gold-hi)}
+.rmap-pins .rmap-others a:focus{outline:none}
+.rmap figcaption{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding:12px 2px 0;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2,#8b8478)}
+.rmap figcaption i{font-style:normal;letter-spacing:.1em;text-transform:none;font-size:.7rem}
+@keyframes rmapPulse{0%,100%{transform:scale(.7);opacity:.22}50%{transform:scale(1.15);opacity:.08}}
+@media (max-width:767px){
+  .rmap{margin:0 calc(var(--gut) * -1)}
+  .rmap figcaption{padding:12px var(--gut) 0}
+  .rmap-pins .rmap-pin text.lb{font-size:40px}
+  .rmap-pins .rmap-others text{font-size:32px}
+  .rmap-pins .rmap-scale text,.rmap-pins .rmap-north text{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){.rmap-pins .rmap-pin .halo{animation:none}}
+
+/* ---------- neighbourhood band (the Elysia format, shared by every project page) ----------
+   <section class="p-sec ill-sec nbh"> with .nb-transit (4 headline distances), optional
+   .nb-scenes (two captioned photographs), .nb-lists (four lists) and .nb-src (sources).
+   Each project sets its own colours: --nb-1 / --nb-2 (band), --nb-acc (kicker, values), --nb-em. */
+.nbh{background:linear-gradient(165deg,var(--nb-1,#1f2f35) 0%,var(--nb-2,#2b3f46) 100%);color:var(--ivory);--line:rgba(244,239,230,.14);--muted:rgba(244,239,230,.62);--muted-2:rgba(244,239,230,.5)}
+.nbh .kicker{color:var(--nb-acc,#a9c0c8)}
+.nbh .display em{color:var(--nb-em,#cfe0e6)}
+.nbh .body-l{color:rgba(244,239,230,.74)}
+/* the contour backdrop (same as project-ill.css, repeated here for pages that don't load it) */
+.nbh{position:relative}
+.nbh>.wrap{position:relative;z-index:1}
+.nbh .ill-contours{position:absolute;left:0;top:0;width:100%;height:clamp(300px,38vw,500px);pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 45%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 45%,transparent 100%)}
+.nbh .ill-contours path{fill:none;stroke:var(--nb-acc,#a9c0c8);stroke-width:1;opacity:.16;vector-effect:non-scaling-stroke}
+.nb-transit{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:clamp(44px,6vh,70px)}
+.nb-transit div{padding:28px 22px 30px 0}
+.nb-transit div+div{padding-left:22px;border-left:1px solid var(--line)}
+.nb-transit b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,3.6vw,3.2rem);line-height:1;color:#f4efe6}
+.nb-transit span{display:block;margin-top:12px;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;line-height:1.7;color:var(--muted-2)}
+.nb-scenes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:clamp(44px,6vh,70px)}
+.nb-scenes figure{margin:0}
+.nb-scenes.one{grid-template-columns:1fr}
+.nb-scenes.one img{aspect-ratio:21/9}
+.nb-scenes img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;filter:saturate(.9)}
+.nb-scenes figcaption{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.nb-scenes figcaption span{font-family:var(--serif);font-size:1.1rem;color:rgba(244,239,230,.9)}
+.nb-scenes figcaption i{font-style:normal;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2)}
+.nb-lists{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,80px) clamp(40px,6vw,110px)}
+.nb-lists h3{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.2vw,1.9rem);margin-bottom:14px}
+.nb-lists h3 i{font-style:normal;font-size:.8rem;color:var(--nb-acc,#a9c0c8)}
+.nb-lists ul{list-style:none;border-top:1px solid var(--line)}
+.nb-lists li{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:15px 0;border-bottom:1px solid var(--line)}
+.nb-lists li span{font-size:.92rem;line-height:1.5;color:rgba(244,239,230,.82)}
+.nb-lists li b{flex:none;max-width:48%;text-align:right;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;line-height:1.6;color:var(--nb-acc,#a9c0c8)}
+.nb-src{margin-top:clamp(36px,5vh,56px);max-width:90ch;color:rgba(244,239,230,.5);text-transform:none;letter-spacing:.01em;font-size:.8rem;line-height:1.65}
+/* how Rare Earth builds: Montira photographs, captioned with where they were taken */
+.nb-photos{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px}
+.nb-photos figure{margin:0}
+.nb-photos img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.86) contrast(1.03)}
+.nb-photos figure:first-child img{aspect-ratio:28/15}
+.nb-photos figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.nb-photos figcaption span{font-family:var(--serif);font-size:1.15rem}
+.nb-photos figcaption i{font-style:normal;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2)}
+.nb-way .acts{margin-top:30px}
+@media (max-width:1024px){
+  .nb-transit{grid-template-columns:1fr 1fr}
+  .nb-transit div:nth-child(3){padding-left:0;border-left:0}
+  .nb-transit div:nth-child(n+3){border-top:1px solid var(--line)}
+  .nb-lists{grid-template-columns:1fr}
+  .nb-photos{grid-template-columns:1fr 1fr}
+  .nb-photos figure:first-child{grid-column:1 / -1}
+  .nb-photos figure:first-child img{aspect-ratio:16/9}
+}
+@media (max-width:767px){
+  .nb-scenes,.nb-photos{grid-template-columns:1fr}
+  .nb-lists li{flex-direction:column;gap:6px}
+  .nb-lists li b{max-width:none;text-align:left}
+}
+.nbh .nw{display:inline;margin:0;padding:0;font:inherit;letter-spacing:inherit;color:inherit;text-transform:inherit;white-space:nowrap}
+@media (max-width:767px){.nb-scenes.one img{aspect-ratio:16/10}}

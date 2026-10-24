@@ -1,0 +1,113 @@
+/* =====================================================================
+   Rare Earth Projects · legal.css  (legal/index.html only)
+   Dark page head (site.css .phead) over an ivory reading column with a
+   sticky table of contents. Long-form text set for comfortable reading.
+   ===================================================================== */
+
+/* ---------- head ---------- */
+.lgl-head{min-height:0;padding-bottom:clamp(50px,7vh,80px)}
+.lgl-head .hero-field path{opacity:.3}
+.lgl-head h1{max-width:none}
+.lgl-nsnav{padding:24px var(--gut);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.lgl-banner{margin-top:clamp(30px,5vh,50px);max-width:760px;display:grid;grid-template-columns:auto 1fr;gap:12px 22px;align-items:start;padding:20px 24px;border:1px solid rgba(202,167,115,.45);border-left:2px solid var(--gold);background:rgba(13,12,10,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.lgl-banner p{font-size:.9rem;color:var(--mute-d);line-height:1.7}
+.lgl-banner .tbc{border-color:var(--hair-d);color:var(--mute-d);padding:3px 8px;margin:0 2px}
+.lgl-flag{display:inline-block;white-space:nowrap;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--obsidian);background:var(--gold);padding:7px 11px;line-height:1.2}
+
+/* ---------- body ---------- */
+.lgl-body{padding:clamp(80px,11vh,130px) 0 clamp(100px,13vh,160px)}
+.lgl-grid{display:grid;grid-template-columns:minmax(220px,1fr) 3fr;gap:clamp(40px,7vw,120px);align-items:start}
+.lgl-toc{position:sticky;top:calc(var(--hdr-offset) + 32px);transition:top .6s var(--ease)}
+.lgl-toc ol{list-style:none;margin-top:18px;border-top:1px solid var(--hair-l)}
+.lgl-toc li{border-bottom:1px solid var(--hair-l)}
+.lgl-toc a{display:flex;align-items:baseline;gap:16px;padding:14px 0;min-height:44px;font-family:var(--serif);font-size:1.3rem;line-height:1.2;color:#5d574d;transition:color .3s,padding .5s var(--ease)}
+.lgl-toc a small{font-family:var(--sans);font-size:.58rem;letter-spacing:.2em;color:#9a9286;min-width:22px}
+.lgl-toc a:hover{color:var(--obsidian)}
+.lgl-toc a.is-on{color:var(--obsidian);font-style:italic;padding-left:8px}
+.lgl-toc a.is-on small{color:var(--gold-lo)}
+.lgl-ver{margin-top:20px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#7a7468}
+
+.lgl-doc{max-width:860px;min-width:0}
+.lgl-sec{scroll-margin-top:110px;padding-bottom:clamp(60px,9vh,100px);margin-bottom:clamp(60px,9vh,100px);border-bottom:1px solid var(--hair-l)}
+.lgl-sec:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.lgl-sh{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:baseline;margin-bottom:30px}
+.lgl-no{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--gold-lo)}
+.lgl-sh h2{font-size:clamp(2.4rem,4.4vw,3.8rem)}
+.lgl-doc .lgl-meta{grid-column:2;max-width:none;line-height:1.6;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:12px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#7a7468}
+.lgl-doc .lgl-lead{font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,1.8vw,1.6rem);line-height:1.4;color:#2a2620;max-width:46ch;margin-bottom:10px}
+.lgl-doc h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.35rem,1.9vw,1.65rem);line-height:1.2;margin:40px 0 12px;color:var(--obsidian)}
+.lgl-doc p,.lgl-doc li,.lgl-doc dd{font-size:.98rem;line-height:1.8;color:#4b463e}
+.lgl-doc p{max-width:70ch}
+.lgl-doc p+p{margin-top:12px}
+.lgl-doc a:not(.pill):not(.link){color:var(--obsidian);border-bottom:1px solid rgba(156,123,73,.55);transition:color .3s,border-color .3s}
+.lgl-doc a:not(.pill):not(.link):hover{color:var(--gold-lo);border-color:var(--gold-lo)}
+.lgl-doc code{font-size:.86em;background:rgba(156,123,73,.12);padding:1px 6px}
+.lgl-doc b{font-weight:500;color:#2a2620}
+.lgl-doc .tbc{border-color:rgba(156,123,73,.6);color:#7a5d33;vertical-align:middle;margin-left:4px}
+.lgl-list{list-style:none;margin:12px 0 14px;max-width:72ch}
+.lgl-list li{position:relative;padding:9px 0 9px 24px;border-bottom:1px solid var(--hair-l)}
+.lgl-list li:first-child{border-top:1px solid var(--hair-l)}
+.lgl-list li::before{content:"";position:absolute;left:2px;top:1.15em;width:5px;height:5px;border:1px solid var(--gold-lo);transform:rotate(45deg)}
+
+.lgl-dl{border-top:1px solid var(--hair-l);margin-top:24px}
+.lgl-dl>div{display:grid;grid-template-columns:200px 1fr;gap:8px 30px;padding:20px 0;border-bottom:1px solid var(--hair-l)}
+.lgl-dl dt{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--gold-lo);padding-top:6px}
+.lgl-dl dd em{font-style:italic;color:#2a2620}
+
+/* RERA register */
+.lgl-tw{margin-top:26px;overflow-x:auto}
+.lgl-table{width:100%;border-collapse:collapse;min-width:0}
+.lgl-table thead th{text-align:left;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:#7a7468;padding:0 18px 14px 0;border-bottom:1px solid var(--obsidian)}
+.lgl-table tbody th,.lgl-table td{text-align:left;vertical-align:middle;padding:22px 18px 22px 0;border-bottom:1px solid var(--hair-l);font-size:.92rem;color:#4b463e;font-weight:300}
+.lgl-table tbody th a{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.1;color:var(--obsidian)!important;border-bottom:0!important}
+.lgl-table tbody th a:hover{color:var(--gold-lo)!important}
+.lgl-table tbody th small{display:block;font-size:.76rem;color:#7a7468;margin-top:4px}
+.lgl-table td.rn{font-family:var(--serif);font-size:1.15rem;font-variant-numeric:lining-nums;color:var(--obsidian);letter-spacing:.01em;overflow-wrap:anywhere}
+.lgl-table td.rn small{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.04em;color:#7a7468;margin-top:4px}
+.lgl-table td.la{text-align:right;padding-right:0;white-space:nowrap}
+.lgl-table td.la button,.lgl-table td.la a{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--gold-lo)!important;border-bottom:0!important;min-height:44px;display:inline-flex;align-items:center;padding:0 0 0 18px}
+.lgl-table td.la button:hover,.lgl-table td.la a:hover{color:var(--obsidian)!important}
+.lgl-others{list-style:none;margin-top:16px;border-top:1px solid var(--hair-l)}
+.lgl-others li{display:grid;grid-template-columns:minmax(180px,.7fr) 2fr;gap:6px 24px;padding:16px 0;border-bottom:1px solid var(--hair-l);align-items:baseline}
+.lgl-others li a{font-family:var(--serif);font-size:1.25rem;line-height:1.2}
+.lgl-others li span{font-size:.9rem;color:#5d574d}
+.lgl-small{margin-top:26px}
+.lgl-doc .link{color:var(--obsidian)}
+
+/* company */
+.lgl-co{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hair-l);margin-top:6px}
+.lgl-co>div{padding:20px 24px 20px 0;border-bottom:1px solid var(--hair-l)}
+.lgl-co>div:nth-child(even){padding-left:24px;border-left:1px solid var(--hair-l)}
+.lgl-co>div.full{grid-column:1/-1;padding-left:0;border-left:0}
+.lgl-co dt{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:#7a7468;margin-bottom:6px}
+.lgl-co dd{font-variant-numeric:lining-nums;font-family:var(--serif);font-size:1.25rem!important;line-height:1.4!important;color:var(--obsidian)!important}
+.lgl-co dd a{border-bottom:1px solid var(--hair-l)!important;white-space:nowrap}
+.lgl-acts{display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px;margin-top:36px}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .lgl-grid{grid-template-columns:1fr}
+  .lgl-toc{position:static}
+  .lgl-toc ol{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+}
+@media (max-width:767px){
+  .lgl-banner{grid-template-columns:1fr;padding:18px}
+  .lgl-banner .lgl-flag{justify-self:start}
+  .lgl-dl>div{grid-template-columns:1fr;gap:4px}
+  .lgl-dl dt{padding-top:0}
+  .lgl-table thead{display:none}
+  .lgl-table,.lgl-table tbody,.lgl-table tr,.lgl-table th,.lgl-table td{display:block;width:100%}
+  .lgl-table tr{padding:18px 0;border-bottom:1px solid var(--hair-l)}
+  .lgl-table tbody th,.lgl-table td{border:0;padding:3px 0}
+  .lgl-table td.la{text-align:left;white-space:normal}
+  .lgl-table td.la button,.lgl-table td.la a{padding:0 18px 0 0}
+  .lgl-others li{grid-template-columns:1fr}
+  .lgl-co{grid-template-columns:1fr}
+  .lgl-co>div:nth-child(even){padding-left:0;border-left:0}
+  .lgl-co dd[data-cfg="officeLines"] br{display:none}
+}
+@media (max-width:640px){
+  .lgl-toc ol{grid-template-columns:1fr}
+  .lgl-sh{grid-template-columns:1fr}
+  .lgl-doc .lgl-meta{grid-column:1}
+}

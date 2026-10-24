@@ -1,0 +1,48 @@
+/* =====================================================================
+   Rare Earth Projects · elysia.css  (Elysia page only)
+   Elysia: 35 residential sites at Kadiganahalli, off Bellary Road.
+   Its own identity, taken from the logo: mist #eef0ec, dusk blue
+   #34505b / #4f7480, a deep dusk band #1f2f35 for the neighbourhood,
+   and the small four-point "star of light" from the logo's i.
+   Shared illustrative blocks live in project-ill.css; the plan viewer
+   is the shared one (plan-viewer.js).
+   ===================================================================== */
+[data-project="elysia"]{--el-ink:#22343b;--el-blue:#34505b;--el-sky:#4f7480;--el-star:#a9c0c8;--el-dusk:#1f2f35;--el-dusk-2:#2b3f46}
+
+/* ---------- hero ---------- */
+.el-hero{--wash:238,240,236}
+.el-hero .media>.art{background:radial-gradient(ellipse at 74% 26%,#f6f7f3 0%,#e6ecea 38%,#cfdcdf 100%)}
+.el-hero .ttl .kicker{color:var(--el-sky)}
+.el-hero .facts b{color:var(--el-ink)}
+.el-hero .p-logo img{filter:drop-shadow(0 2px 18px rgba(238,240,236,.7))}
+.el-stars{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.el-stars path{fill:var(--el-sky);opacity:.55;transform-box:fill-box;transform-origin:center;animation:elTwinkle 5.5s ease-in-out infinite}
+.el-stars path:nth-child(2){animation-delay:1.8s;opacity:.4}
+.el-stars path:nth-child(3){animation-delay:3.4s;opacity:.35}
+@keyframes elTwinkle{0%,100%{transform:scale(.82);opacity:.25}50%{transform:scale(1.08);opacity:.7}}
+
+/* ---------- layout ---------- */
+[data-project="elysia"] .el-layout .ill-contours path{stroke:var(--el-sky);opacity:.22}
+.el-trio{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(34px,5vh,56px)}
+.el-trio li{position:relative;padding:26px 26px 28px;background:rgba(255,255,255,.55);border:1px solid rgba(34,52,59,.1)}
+.el-trio li::before{content:"";position:absolute;left:0;top:0;right:0;height:5px}
+.el-trio li.a::before{background:#c2d4e0}.el-trio li.b::before{background:#cfdcd4}.el-trio li.c::before{background:#e6d5b4}
+.el-trio small{display:block;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--el-sky);margin-bottom:12px}
+.el-trio b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2vw,1.8rem);line-height:1.1;color:var(--el-ink)}
+.el-trio span{display:block;margin-top:10px;font-size:.9rem;line-height:1.55;color:#4d5a5e}
+.el-note{margin-top:22px;color:#5c686b;text-transform:none;letter-spacing:.01em;font-size:.82rem;line-height:1.6}
+
+/* ---------- neighbourhood band: shared .nbh styles in project.css, Elysia colours here ---------- */
+.el-dusk{--nb-1:var(--el-dusk);--nb-2:var(--el-dusk-2);--nb-acc:var(--el-star);--nb-em:#cfe0e6}
+
+/* ---------- viewing ---------- */
+.el-viewing{background:linear-gradient(165deg,var(--el-dusk) 0%,#15232a 100%)}
+.el-viewing .kicker{color:var(--el-star)}
+
+/* ---------- smaller screens ---------- */
+@media (max-width:767px){
+  .el-trio{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .el-stars path{animation:none}
+}

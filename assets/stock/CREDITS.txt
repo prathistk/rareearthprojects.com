@@ -1,0 +1,9 @@
+Stock photographs used on rareearthprojects.com
+All from Unsplash (https://unsplash.com), free under the Unsplash License (https://unsplash.com/license).
+Downloaded 23 Oct 2026 at 2000 px, re-saved at 1600 px and 800 px (-sm). Always captioned on the site as illustrative stock photographs, never as a Rare Earth project.
+
+bengaluru-airport-t2-garden  Kempegowda International Airport, Terminal 2  vamcy CCC            https://unsplash.com/photos/wgE-q8MdlUY
+bengaluru-airport-t1         Kempegowda International Airport, Terminal 1  Joydeep Sensarma     https://unsplash.com/photos/a16y20-33ho
+bengaluru-metro-sunset       Namma Metro station at sunset, Bengaluru     Jithin Vijayamohanan https://unsplash.com/photos/4OZwiBI-h1E
+
+(family, park-play and modern-house were removed from the site on 23 Oct 2026 at the owner's request; kept in .archive/stock, not published.)

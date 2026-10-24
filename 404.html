@@ -1,0 +1,88 @@
+<!doctype html>
+<!--
+  =====================================================================
+  RARE EARTH PROJECTS · 404 (not found)
+  Static hosts serve this file AT THE MISSING URL (e.g. /projects/x/y),
+  so relative paths would break. A static <base href="/"> (the canonical
+  site is served from the root, and it also covers visitors without JS)
+  is adjusted by the inline script before any asset is requested:
+    - opened directly (/404.html, or file://…/404.html) → its own folder
+    - under a known section (/…/projects|contact|legal|assets/…) → the
+      part of the path before that section (works under a sub-path)
+    - anything else → "/"
+  A few inline rules keep the page legible even if the stylesheet fails.
+  assets/js/notfound.js lists the communities and suggests a match.
+  =====================================================================
+-->
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/">
+<script>
+(function () {
+  var d = document, p = location.pathname, b = '/', m;
+  if (location.protocol === 'file:' || /\/404(?:\.html)?$/.test(p)) b = p.replace(/[^\/]*$/, '');
+  else if ((m = p.match(/^(.*?\/)(?:projects|contact|legal|assets)(?:\/|$)/))) b = m[1];
+  var e = d.querySelector('base');
+  if (e && e.getAttribute('href') !== b) e.setAttribute('href', b);
+  d.documentElement.classList.remove('no-js');
+})();
+</script>
+<title>Page Not Found | Rare Earth Projects</title>
+<meta name="description" content="This page isn't on our map. Explore Rare Earth communities at Nandi Hills, Devanahalli, Bagalur, Yelahanka and next to SLK Tech Park.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0d0c0a">
+<link rel="icon" type="image/png" href="assets/mark-gold.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* safety net if the stylesheet cannot load */
+  body{margin:0;background:#0d0c0a;color:#f4efe6;font-family:Manrope,system-ui,sans-serif;font-weight:300;line-height:1.7}
+  a{color:#caa773}
+</style>
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/notfound.css">
+</head>
+<body data-root="" data-page="404">
+<div data-site="header"></div>
+
+<main id="main">
+<section class="hero nf-hero" aria-labelledby="nf-h1">
+  <svg class="hero-field" data-contours data-draw data-seed="404" data-count="28" data-cx="1180" data-cy="520" data-size="1450" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+  <div class="wrap hero-in nf-in">
+    <span class="kicker rv">404 · Page not found</span>
+    <h1 id="nf-h1" class="display h-xl split" data-autostart><span class="ln"><span>This parcel isn't</span></span><span class="ln"><span><em>on our map.</em></span></span></h1>
+    <p class="lead rv d1">The link may be out of date, or the page may have moved. Every Rare Earth community is still right where we left it.</p>
+    <p class="nf-hint rv d1" id="nfHint" hidden></p>
+    <div class="hero-actions rv d2">
+      <a href="projects/" class="pill solid">View all projects</a>
+      <a href="./" class="link">Back to home <span class="ln"></span></a>
+      <a href="contact/" class="link" data-enquire="visit" data-project="" data-source="404">Arrange a private viewing <span class="ln"></span></a>
+    </div>
+  </div>
+  <!-- Communities as points on the contour field, roughly where each sits around north Bengaluru.
+       Regenerated from projects-data.js by notfound.js (site.js fillPins); static pins are the no-JS fallback -->
+  <div class="wrap hero-pins rv d3">
+    <nav class="pins" id="nfPins" aria-label="Communities">
+      <a class="pin r live" href="projects/montira/" style="--x:80%;--y:22%;--i:0" aria-label="Montira, Nandi Hills, now selling"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Montira</b><span>Nandi Hills</span></span></a>
+      <a class="pin b live" href="projects/athena/" style="--x:91%;--y:53%;--i:1" aria-label="Athena, Devanahalli, now selling"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Athena</b><span>Devanahalli</span></span></a>
+      <a class="pin r" href="projects/serenity/" style="--x:84%;--y:76%;--i:2"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Serenity</b><span>Bagalur</span></span></a>
+      <a class="pin r" href="projects/tranquility/" style="--x:64%;--y:67%;--i:3"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Tranquility</b><span>Yelahanka</span></span></a>
+      <a class="pin r" href="projects/arcadia/" style="--x:73%;--y:45%;--i:4"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Arcadia</b><span>SLK Tech Park</span></span></a>
+      <a class="pin r" href="projects/elysia/" style="--x:70%;--y:59%;--i:5"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Elysia</b><span>Kadiganahalli</span></span></a>
+    </nav>
+    <div class="pins-key" aria-hidden="true"><span class="k-live"><i></i>Now selling</span><span class="k-map"><svg viewBox="0 0 16 22"><path d="M8 21V2M3 7l5-5 5 5"/></svg>North Bengaluru · not to scale</span></div>
+  </div>
+</section>
+</main>
+
+<div data-site="footer"></div>
+
+<script src="assets/js/projects-data.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/enquiry.js" defer></script>
+<script src="assets/js/notfound.js" defer></script>
+</body>
+</html>

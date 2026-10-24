@@ -1,0 +1,16 @@
+{
+ "view": "plan",
+ "w": 1600,
+ "h": 1037,
+ "hotspots": [],
+ "plotTypes": {
+  "30x40": 9,
+  "30x50": 6,
+  "odd": 9
+ },
+ "planColors": {
+  "30x40": "#ecdfc4",
+  "30x50": "#e6d7b8",
+  "odd": "#dccfb0"
+ }
+}

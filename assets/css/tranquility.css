@@ -1,0 +1,143 @@
+/* =====================================================================
+   Rare Earth Projects · tranquility.css  (Tranquility page only)
+   Dark, quiet and nocturnal: charcoal base #141311, umber paper
+   gradient #141311 → #28231c, gold contours and gold accents (from the
+   landing page's .a-tranq panel). One bone band (the layout) gives the
+   page its dark/light rhythm. The serif TRANQUILITY wordmark is the H1.
+   Shared illustrative blocks live in project-ill.css; behaviour in
+   assets/js/tranquility.js (render-gated sections, map pins).
+   ===================================================================== */
+[data-project="tranquility"]{--tq-night:#141311;--tq-umber:#28231c}
+
+/* ---------- hero ---------- */
+.tq-hero .p-logo img{filter:drop-shadow(0 2px 22px rgba(13,12,10,.55))}
+.tq-hero .kicker{color:var(--gold)}
+.tq-hero .r-note{color:rgba(244,239,230,.6)}
+.proj.dark.tq-hero .proj-cover::after{background:linear-gradient(180deg,rgba(13,12,10,.62) 0%,rgba(13,12,10,0) 28%,rgba(13,12,10,.08) 58%,var(--base) 100%)}
+/* the daytime render, graded towards dusk */
+.proj.dark.tq-hero .media>img.ill-r{filter:saturate(.68) contrast(1.06) brightness(.6) sepia(.2)}
+.proj.dark.tq-hero.has-render .proj-cover::after{background:linear-gradient(90deg,rgba(13,12,10,.86) 0%,rgba(13,12,10,.6) 32%,rgba(13,12,10,.12) 58%,rgba(13,12,10,0) 72%),linear-gradient(180deg,rgba(13,12,10,.7) 0%,rgba(13,12,10,0) 26%,rgba(13,12,10,.1) 56%,var(--base) 100%)}
+.tq-hero .media>.art{background:radial-gradient(120% 90% at 78% 30%,#2c261d 0%,#141311 62%)}
+.tq-hero .facts b{color:var(--gold-hi)}
+
+/* ---------- dark bands: contours + rules in gold ---------- */
+[data-project="tranquility"] .ill-contours path{stroke:var(--gold);opacity:.16}
+[data-project="tranquility"] .accent-rule{background:linear-gradient(90deg,var(--gold),rgba(202,167,115,0))}
+
+/* ---------- sections that wait for their renders (tranquility.js) ----------
+   collapsed in place, not display:none, so the sub-nav scroll-spy keeps
+   measuring the right positions; their sub-nav links are hidden too */
+body.tq-noplan #layout,body.tq-nogal #gallery{height:0;min-height:0;padding:0;margin:0;border:0;overflow:hidden;visibility:hidden}
+body.tq-noplan .subnav a[href="#layout"],body.tq-nogal .subnav a[href="#gallery"]{display:none}
+
+/* ---------- overview figure: survey mark until the entrance render loads ---------- */
+.tq-survey .tq-bm{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;color:var(--gold)}
+.tq-bm svg{width:clamp(96px,11vw,140px);height:auto;overflow:visible}
+.tq-bm svg circle.o{fill:rgba(20,19,17,.55);stroke:var(--gold);stroke-width:1}
+.tq-bm svg circle.i{fill:var(--gold)}
+.tq-bm svg path{stroke:var(--gold);stroke-width:1;fill:none}
+.tq-bm .ll{margin-top:18px;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-hi)}
+.tq-bm .pl{margin-top:8px;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,1.9vw,1.7rem);color:var(--ivory);opacity:.86}
+.tq-survey svg.cn path{opacity:.24}
+.ov-fig figcaption .c-r{display:none}
+.ov-fig.has-render figcaption .c-r{display:inline}
+.ov-fig.has-render figcaption .c-art{display:none}
+
+/* ---------- neighbourhood ---------- */
+.tq-nb{display:grid;grid-template-columns:7fr 5fr;gap:clamp(30px,6vw,110px);align-items:center}
+/* no eye-level render yet: no art stand-in, the three points sit in a row */
+.tq-fig:not(.has-render){display:none}
+.tq-nb:not(:has(.tq-fig.has-render)){grid-template-columns:1fr}
+.tq-nb:not(:has(.tq-fig.has-render)) .tq-points{display:grid;grid-template-columns:repeat(3,1fr)}
+.tq-nb:not(:has(.tq-fig.has-render)) .tq-points li{display:block;padding:clamp(28px,4vh,40px) clamp(16px,2.4vw,40px) 6px 0;border-bottom:0;border-right:1px solid var(--line)}
+.tq-nb:not(:has(.tq-fig.has-render)) .tq-points li+li{padding-left:clamp(16px,2.4vw,40px)}
+.tq-nb:not(:has(.tq-fig.has-render)) .tq-points li:last-child{border-right:0}
+.tq-nb:not(:has(.tq-fig.has-render)) .tq-points .i{display:block;margin-bottom:14px}
+.tq-nb:not(:has(.tq-fig.has-render)) .tq-points b{display:block;margin-bottom:12px}
+.tq-fig .ill-frame{aspect-ratio:4/3;background:var(--tq-night)}
+.tq-fig .ill-frame>.art img.wmi{max-width:64%;opacity:.9}
+.tq-fig .ill-frame>img.ill-r,.ov-fig .ill-frame>img.ill-r{filter:saturate(.8) contrast(1.04) brightness(.86) sepia(.1)}
+.tq-points{list-style:none;border-top:1px solid var(--line)}
+.tq-points li{display:grid;grid-template-columns:44px 1fr;gap:6px 16px;padding:clamp(22px,3vh,32px) 0;border-bottom:1px solid var(--line)}
+.tq-points .i{grid-row:1/3;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--gold);line-height:1.6}
+.tq-points b{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.2vw,2rem);line-height:1.12}
+.tq-points p{font-size:.95rem;color:var(--muted);max-width:40ch}
+
+/* ---------- layout (bone band) ---------- */
+.tq-layout{background:var(--bone)}
+[data-project="tranquility"] .tq-layout .pv{--pv-sheet:#f2ede3}
+[data-project="tranquility"] .tq-layout .ill-ph-in .kicker{color:var(--gold)}
+[data-project="tranquility"] .tq-layout .ill-ph-in .display em{color:var(--gold-hi)}
+[data-project="tranquility"] .tq-layout .ill-ph-in .pill{border-color:var(--gold);color:var(--gold)}
+[data-project="tranquility"] .tq-layout .ill-ph-in .pill::before{background:var(--gold)}
+[data-project="tranquility"] .tq-layout .ill-ph-in .pill:hover{color:var(--obsidian)}
+[data-project="tranquility"] .tq-layout .ill-ph-in .link{color:var(--ivory)}
+
+/* ---------- path ---------- */
+.tq-path .ill-path li::before{background:var(--tq-night)}
+.tq-status{display:flex;flex-direction:column;gap:4px;margin-right:auto;padding-left:18px;border-left:2px solid var(--gold)}
+.tq-status small{font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted-2)}
+.tq-status b{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2vw,1.8rem);line-height:1.1;color:var(--gold-hi)}
+
+/* ---------- location: crop of the real OSM-derived base map ---------- */
+.tq-loc{align-items:start}
+.tq-map{margin:0;padding:0;background:none;border:0}
+.tq-map-in{position:relative;aspect-ratio:850/666;overflow:hidden;background:#100f0d;border:1px solid var(--hair-d)}
+/* base is 1000 x 1226; the crop is x 0–850, y 560–1226 */
+.tq-map-base{position:absolute;left:0;top:-84.084%;width:117.647%;max-width:none;height:auto}
+.tq-map-pins{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+.tq-map-pins .plate{fill:#100f0d}
+.tq-map-pins .tq-scale path,.tq-map-pins .tq-north path{stroke:rgba(244,239,230,.7);stroke-width:1.6;fill:none}
+.tq-map-pins .tq-north path{fill:rgba(244,239,230,.7);stroke:none}
+.tq-map-pins .tq-scale text,.tq-map-pins .tq-north text{font-family:var(--sans);font-size:15px;letter-spacing:1.4px;fill:rgba(244,239,230,.7)}
+.tq-map-pins .tq-pin .halo{fill:var(--gold);opacity:.16;transform-box:fill-box;transform-origin:center;animation:tqPulse 3.2s var(--ease) infinite}
+.tq-map-pins .tq-pin rect{fill:#0d0c0a;stroke:var(--gold);stroke-width:1.6}
+.tq-map-pins .tq-pin text{font-family:var(--serif);font-size:22px;fill:var(--gold)}
+.tq-map-pins .tq-pin text.lb{font-style:italic;font-size:30px;fill:var(--ivory);paint-order:stroke;stroke:#100f0d;stroke-width:5px;stroke-linejoin:round}
+.tq-map-pins .tq-others a{cursor:pointer}
+.tq-map-pins .tq-others .hit{fill:transparent}
+.tq-map-pins .tq-others .dot{fill:rgba(244,239,230,.62);stroke:#100f0d;stroke-width:2;transition:fill .3s}
+.tq-map-pins .tq-others text{font-family:var(--serif);font-style:italic;font-size:23px;fill:rgba(244,239,230,.8);paint-order:stroke;stroke:#100f0d;stroke-width:4px;stroke-linejoin:round;transition:fill .3s}
+.tq-map-pins .tq-others a:hover .dot,.tq-map-pins .tq-others a:focus-visible .dot{fill:var(--gold)}
+.tq-map-pins .tq-others a:hover text,.tq-map-pins .tq-others a:focus-visible text{fill:var(--gold-hi)}
+.tq-map-pins .tq-others a:focus{outline:none}
+.tq-map figcaption{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding:12px 2px 0;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2)}
+.tq-map figcaption i{font-style:normal;letter-spacing:.1em;text-transform:none;font-size:.7rem}
+@keyframes tqPulse{0%,100%{transform:scale(.55);opacity:.22}50%{transform:scale(1.1);opacity:.08}}
+@media (prefers-reduced-motion:reduce){.tq-map-pins .tq-pin .halo{animation:none}}
+
+.tq-loc-side{padding-top:clamp(4px,1vh,12px)}
+.tq-addr{margin:14px 0 30px;font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,2.8vw,2.6rem);line-height:1.1}
+.tq-addr em{color:var(--gold-hi)}
+.tq-key{list-style:none;border-top:1px solid var(--line)}
+.tq-key li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-size:.96rem}
+.tq-key small{display:block;margin-top:3px;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2)}
+.tq-key .k{justify-self:center;display:flex;align-items:center;justify-content:center}
+.tq-key .k-pin{width:24px;height:24px;border:1px solid var(--gold);border-radius:5px;background:#0d0c0a;font-family:var(--serif);font-size:.95rem;color:var(--gold)}
+.tq-key .k-dot{width:10px;height:10px;border-radius:50%;background:rgba(244,239,230,.62)}
+.tq-key .k-office{width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.tq-loc-side .locm-acts{margin-top:30px}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .tq-nb{grid-template-columns:1fr}
+  .tq-nb:not(:has(.tq-fig.has-render)) .tq-points{grid-template-columns:1fr}
+  .tq-nb:not(:has(.tq-fig.has-render)) .tq-points li,.tq-nb:not(:has(.tq-fig.has-render)) .tq-points li+li{display:grid;grid-template-columns:44px 1fr;gap:6px 16px;padding:clamp(22px,3vh,32px) 0;border-right:0;border-bottom:1px solid var(--line)}
+  .tq-nb:not(:has(.tq-fig.has-render)) .tq-points .i{margin-bottom:0}
+  .tq-nb:not(:has(.tq-fig.has-render)) .tq-points b{margin-bottom:0}
+}
+@media (max-width:767px){
+  .proj.dark.tq-hero.has-render .proj-cover::after{background:linear-gradient(180deg,rgba(13,12,10,.74) 0%,rgba(13,12,10,.15) 22%,rgba(13,12,10,.45) 42%,rgba(13,12,10,.9) 62%,var(--base) 100%)}
+  .tq-status{margin-right:0;width:100%}
+  .tq-points li{grid-template-columns:34px 1fr}
+  .tq-nb:not(:has(.tq-fig.has-render)) .tq-points li,.tq-nb:not(:has(.tq-fig.has-render)) .tq-points li+li{grid-template-columns:34px 1fr}
+  .tq-map{margin:0 calc(var(--gut) * -1)}
+  .tq-map figcaption{padding:12px var(--gut) 0}
+  .tq-map-pins .tq-pin text.lb{font-size:40px}
+  .tq-map-pins .tq-others text{font-size:32px}
+  .tq-map-pins .tq-others .dot{r:8}
+  .tq-map-pins .tq-scale text,.tq-map-pins .tq-north text{font-size:22px}
+}
+
+/* neighbourhood band (shared .nbh in project.css): Tranquility's gold on charcoal */
+.tq-band{--nb-1:#141311;--nb-2:#28231c;--nb-acc:#caa773;--nb-em:#e2c79a}

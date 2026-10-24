@@ -1,0 +1,16 @@
+{
+ "view": "plan",
+ "w": 1600,
+ "h": 801,
+ "hotspots": [],
+ "plotTypes": {
+  "row-a": 17,
+  "row-b": 17,
+  "corner": 1
+ },
+ "planColors": {
+  "row-a": "#ecdfc4",
+  "row-b": "#e6d7b8",
+  "corner": "#dccfb0"
+ }
+}

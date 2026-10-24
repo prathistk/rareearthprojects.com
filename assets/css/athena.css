@@ -1,0 +1,248 @@
+/* =====================================================================
+   Rare Earth Projects · athena.css  (Athena page only)
+   Architectural, plan-first identity inside the Rare Earth brand: bone
+   base (#ebe4d6) and ivory paper bands with obsidian ink, the render's
+   olive (#6c7a44) as a quiet accent, gold-lo for type accents on light,
+   gold for every call to action. Two coal bands (Phases, Infrastructure)
+   keep the site's dark / light rhythm and carry gold line drawings.
+   Motifs: the drawing sheet (cream card, hairline + inset border), the
+   3D render stage that settles flat as you scroll, the key plan, road
+   cross-sections drawn to a common scale.
+   ===================================================================== */
+[data-project="athena"]{--olive:#6c7a44;--olive-hi:#8d9a5c;--sheet:#efe9dd}
+
+/* light bands: olive hairline accents, warm hairlines */
+[data-project="athena"] .p-base,[data-project="athena"] .p-paper{--line:rgba(13,12,10,.13)}
+
+/* ---------- hero: cover + render stage ---------- */
+.ath-hero{position:relative;overflow:hidden}
+.ath-hero .ath-cover{position:relative;z-index:1}
+.ath-hcont{position:absolute;right:0;top:0;width:min(100%,1100px);height:clamp(420px,62vw,760px);pointer-events:none;z-index:0;
+  -webkit-mask-image:radial-gradient(120% 100% at 100% 0%,#000 20%,transparent 75%);mask-image:radial-gradient(120% 100% at 100% 0%,#000 20%,transparent 75%)}
+.ath-hcont path{fill:none;stroke:var(--olive);stroke-width:1;opacity:.24;vector-effect:non-scaling-stroke}
+.ath-hero .kicker{display:inline-flex;align-items:center;gap:14px}
+.ath-hero .kicker::before{content:"";width:28px;height:1px;background:var(--olive)}
+.ath-hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.4;color:#5d574d;margin-top:18px;max-width:40ch}
+.ath-hero .micro{color:#6c665b;line-height:1.9}
+.ath-hero .micro a{border-bottom-color:var(--hair-l)}
+.ath-hero .micro a:hover{color:var(--obsidian)}
+.ath-hero .ath-cover .top{margin-bottom:clamp(24px,4vh,44px)}
+.ath-hero .link{color:var(--obsidian)}
+
+.ath-stage{padding-bottom:clamp(70px,10vh,120px)}
+.ath-stage[hidden]{display:none!important}
+/* the stage tilts back and settles flat as it scrolls up (athena.js sets --tilt 1 → 0) */
+.ath-render.render,.ath-render.render.in{transform:rotateX(calc(var(--tilt,0) * 14deg)) scale(calc(1 - var(--tilt,0) * .04));transition:transform .25s linear;will-change:transform}
+.ath-rimg{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#d9d1bf;cursor:zoom-in}
+.ath-rimg img{width:100%;height:100%;max-height:none;object-fit:cover;transition:transform 1.6s var(--ease)}
+.ath-rimg:hover img{transform:scale(1.015)}
+.ath-rimg:focus-visible{outline:2px solid var(--gold-lo);outline-offset:4px}
+/* a plan (fallback) shows whole, on the drawing sheet */
+.ath-render.is-sheet .ath-rimg{aspect-ratio:auto;background:var(--sheet);padding:clamp(10px,1.6vw,26px)}
+.ath-render.is-sheet .ath-rimg::before{content:"";position:absolute;inset:clamp(5px,.7vw,10px);border:1px solid rgba(13,12,10,.12);pointer-events:none;z-index:1}
+.ath-render.is-sheet .ath-rimg img{height:auto;max-height:min(112vh,1240px);object-fit:contain;mix-blend-mode:multiply}
+.ath-rcap{display:flex;justify-content:space-between;align-items:center;gap:10px 28px;flex-wrap:wrap;margin-top:24px;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:#7a7468;line-height:1.8}
+.no-js .ath-render{--tilt:0}
+
+/* ---------- overview ---------- */
+.ath-overview{padding-bottom:clamp(90px,12vh,150px);border-top:1px solid var(--line)}
+.ath-overview .proj-body{padding-top:clamp(70px,10vh,110px);padding-bottom:0}
+
+/* ---------- phases (coal band) ---------- */
+.ath-phases{overflow:hidden}
+.ath-phases>.wrap{position:relative;z-index:1}
+.ath-pcont{position:absolute;left:0;top:0;width:100%;height:clamp(300px,36vw,520px);pointer-events:none;z-index:0;
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)}
+.ath-pcont path{fill:none;stroke:var(--olive-hi);stroke-width:1;opacity:.22;vector-effect:non-scaling-stroke}
+.ath-ph-grid{display:grid;grid-template-columns:minmax(220px,.55fr) 1.6fr;gap:clamp(30px,5vw,96px);align-items:start}
+.ath-key{position:sticky;top:calc(var(--hdr-offset) + var(--subnav-h) + 34px);margin:0}
+.ath-key svg{display:block;width:100%;max-width:330px;height:auto;overflow:visible}
+.ath-key text{font-family:var(--sans);fill:rgba(244,239,230,.62)}
+.ath-key .kp-n text{font-size:10px;font-weight:600;fill:#caa773;letter-spacing:.1em}
+.ath-key .kp{cursor:pointer;outline:none}
+.ath-key .kp .blk{fill:url(#kp-rows);stroke:rgba(202,167,115,.5);stroke-width:1;transition:fill .5s,stroke .5s}
+.ath-key .kp:hover .blk,.ath-key .kp:focus-visible .blk,.ath-key .kp.hl .blk{fill:rgba(202,167,115,.16);stroke:#caa773;stroke-width:1.5}
+.ath-key .kp:focus-visible .blk{stroke-dasharray:5 4}
+.ath-key .kp-rn{font-family:var(--serif);font-style:italic;font-size:56px;fill:#e2c79a}
+.ath-key .kp-rn.sm{font-size:30px}
+.ath-key .kp-t{font-size:8.5px;letter-spacing:.24em;font-weight:500;fill:rgba(244,239,230,.86)}
+.ath-key .kp-s{font-size:8.5px;letter-spacing:.08em}
+.ath-key .kp-road rect{fill:rgba(244,239,230,.14)}
+.ath-key .kp-road path{fill:none;stroke:rgba(244,239,230,.5);stroke-width:1}
+.ath-key .kp-lbl{font-size:7.5px;letter-spacing:.2em;font-weight:500;fill:#caa773}
+.ath-key figcaption{margin-top:18px;max-width:330px;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);line-height:1.9}
+
+.ath-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
+.ath-card{background:var(--coal);padding:clamp(24px,2.8vw,42px);display:flex;flex-direction:column;transition:background .5s}
+.ath-card.hl{background:#1c1a16}
+.ath-card header{display:flex;align-items:center;gap:18px}
+.ath-rn{flex:none;min-width:46px;height:46px;padding:0 8px;border:1px solid rgba(202,167,115,.5);border-radius:999px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1;color:var(--gold-hi)}
+.ath-card h3{font-family:var(--sans);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;font-weight:500;color:var(--ivory)}
+.ath-st{display:block;margin-top:6px;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+/* phase status (owner, 23 Oct 2026): Phase I sold out, Phase II now selling */
+.ath-sale{display:inline-block;margin-top:10px;padding:5px 10px 4px;border-radius:2px;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;line-height:1.2}
+.ath-sale.sold{background:rgba(244,239,230,.12);color:#e2d8c6}
+.ath-sale.on{background:#6c7a44;color:#f4efe6}
+.ath-n{display:flex;align-items:baseline;gap:14px;margin-top:clamp(26px,4vh,40px)}
+.ath-n b{font-family:var(--serif);font-weight:300;font-size:clamp(4.4rem,7vw,6.8rem);line-height:.86;color:var(--ivory)}
+.ath-n span{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+.ath-ext{margin-top:14px;font-size:.92rem;color:var(--mute-d)}
+.ath-dl{list-style:none;margin-top:26px;border-top:1px solid var(--hair-d)}
+.ath-dl li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--hair-d);font-size:.88rem}
+.ath-dl li>span{color:var(--mute-d)}
+.ath-dl li>b{font-family:var(--serif);font-weight:400;font-size:1.18rem;line-height:1.25;text-align:right}
+.ath-dl li>b.rn{font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.02em;word-break:break-word}
+.ath-acts{margin-top:auto;padding-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px}
+.ath-acts .link{color:var(--ivory)}
+/* project-level RERA line under the phase cards (owner: "Athena is RERA registered", no per-phase RERA copy) */
+.ath-rera{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px;margin-top:clamp(26px,4vh,40px);padding-top:20px;border-top:1px solid var(--hair-d);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;line-height:1.8;color:var(--mute)}
+.ath-rera-k{color:var(--gold);font-weight:500}
+.ath-rera-n{font-size:.78rem;letter-spacing:.06em;color:var(--ivory);word-break:break-word}
+.ath-rera a{margin-left:auto;color:var(--mute);border-bottom:1px solid var(--hair-d);transition:color .3s,border-color .3s}
+.ath-rera a:hover,.ath-rera a:focus-visible{color:var(--gold-hi);border-color:var(--gold)}
+
+/* ---------- layout ---------- */
+[data-project="athena"] .ath-layout .pv{--pv-sheet:#efe9dd}
+/* portrait sheets (Phase I): keep the stage full width. Without an explicit width, Chrome
+   transfers .pv-stage's max-height through its aspect-ratio into a max-width, so the
+   stage shrinks and sits left-aligned (reported to the foundation for site.css). */
+[data-project="athena"] .pv-stage{width:100%}
+/* fallback while the rendered master plan is not published: the two phase drawings */
+.ath-plan-fb{display:none}
+.ath-plan-fb.on,.no-js .ath-plan-fb{display:block}
+.no-js [data-plan-viewer]{display:none}
+.ath-fb-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(16px,2vw,28px);align-items:start}
+.ath-fb-grid.ath-fb-one{grid-template-columns:minmax(0,720px);justify-content:center}
+.ath-fb{margin:0;background:var(--sheet);border:1px solid rgba(156,123,73,.35);padding:clamp(10px,1.4vw,20px);position:relative;transition:box-shadow .5s,border-color .5s}
+.ath-fb::before{content:"";position:absolute;inset:clamp(5px,.6vw,9px);border:1px solid rgba(13,12,10,.1);pointer-events:none}
+.ath-fb.hl{border-color:var(--gold);box-shadow:0 0 0 3px rgba(202,167,115,.35)}
+.ath-fb a{display:block;cursor:zoom-in;outline:none}
+.ath-fb a:focus-visible{outline:2px solid var(--gold-lo);outline-offset:4px}
+.ath-fb img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.ath-fb figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:6px 16px;flex-wrap:wrap;margin-top:14px;padding:12px 4px 2px;border-top:1px solid var(--line)}
+.ath-fb figcaption b{font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.1}
+.ath-fb figcaption span{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2);line-height:1.8}
+.ath-fb-cap{margin-top:18px;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);line-height:1.9}
+.ath-plan-fb .acts{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}
+
+/* optional phase overlay on the master plan (meta.phases) */
+.ath-phov{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.ath-phov polygon{fill:transparent;stroke:transparent;stroke-width:2;vector-effect:non-scaling-stroke;transition:fill .4s,stroke .4s}
+.ath-phov[data-on] polygon.dim{fill:rgba(239,233,221,.74)}
+.ath-phov[data-on] polygon.lit{stroke:#9c7b49;stroke-dasharray:7 5}
+.ath-phlbl{position:absolute;inset:0;pointer-events:none;z-index:0}
+.ath-phlbl span{position:absolute;transform:translate(-50%,-50%) scale(var(--inv,1));white-space:nowrap;padding:5px 10px;background:rgba(13,12,10,.82);color:var(--ivory);font:500 .56rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;opacity:0;transition:opacity .3s}
+.ath-phlbl[data-on] span.lit{opacity:1}
+.ath-phsel{display:flex;gap:0;border:1px solid var(--line);flex:none}
+.ath-phsel button{min-height:38px;padding:0 14px;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--muted-2);transition:background .3s,color .3s}
+.ath-phsel-l{display:flex;align-items:center;padding:0 12px;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--gold-lo);border-right:1px solid var(--line)}
+.ath-phsel button+button{border-left:1px solid var(--line)}
+.ath-phsel button[aria-pressed="true"]{background:var(--gold);color:var(--obsidian)}
+.pv.is-full .ath-phsel{border-color:var(--hair-d)}
+
+/* ---------- gallery: plan sheets sit side by side, caption below the drawing ---------- */
+[data-project="athena"] .gal figure.sheet{grid-column:span 3;grid-row:auto;aspect-ratio:auto}
+[data-project="athena"] .gal figure.sheet img{height:auto;aspect-ratio:4/3}
+[data-project="athena"] .gal figure.sheet figcaption{position:static;padding:2px 14px 14px}
+
+/* ---------- plots ---------- */
+.ath-plots{padding-top:0}
+/* the phase strip project.js appends here repeats the Phases section above: hidden on this page */
+.ath-plots .phases{display:none}
+
+/* ---------- amenities ---------- */
+.ath-amen-h{margin:24px 0 20px}
+.ath-amen-p{margin-bottom:34px}
+.ath-lead{display:grid;grid-template-columns:auto 1fr;gap:8px clamp(18px,2.4vw,34px);align-items:center;padding:26px 0;margin:0 0 34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ath-lead>b{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,5vw,4.6rem);line-height:.9;color:var(--olive);white-space:nowrap}
+.ath-lead>b small{font-size:.3em;letter-spacing:.14em;text-transform:uppercase;margin-left:4px;color:#6c665b;font-family:var(--sans);font-weight:500}
+.ath-lead>div>span{display:block;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--gold-lo)}
+.ath-lead p{margin-top:8px;font-size:.92rem;color:#5d574d;max-width:38ch}
+.ath-amen-art{position:sticky;top:calc(var(--hdr-offset) + var(--subnav-h) + 30px);margin:0}
+.ath-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:#d9d1bf;box-shadow:0 0 0 1px rgba(156,123,73,.25)}
+.ath-frame img{width:100%;height:100%;object-fit:cover}
+.ath-amen-art.is-sheet .ath-frame{aspect-ratio:auto;background:var(--sheet);padding:clamp(10px,1.4vw,20px)}
+.ath-amen-art.is-sheet .ath-frame::before{content:"";position:absolute;inset:clamp(5px,.6vw,9px);border:1px solid rgba(13,12,10,.12);pointer-events:none}
+.ath-amen-art.is-sheet .ath-frame img{height:auto;object-fit:contain;mix-blend-mode:multiply}
+/* the master plan is tall: keep it within the screen beside the text */
+.ath-amen-art.is-sheet .ath-frame img{width:auto;max-width:100%;max-height:calc(100vh - var(--hdr-offset) - var(--subnav-h) - 150px);margin:0 auto;display:block}
+.ath-amen-art figcaption{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);line-height:1.8}
+
+/* ---------- infrastructure: road sections ---------- */
+.ath-roads{margin-bottom:clamp(60px,9vh,100px)}
+.ath-roadlist{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair-d)}
+.ath-roadlist li{padding:24px 18px 20px 0;border-bottom:1px solid var(--hair-d)}
+.ath-roadlist b{display:block;font-family:var(--serif);font-weight:300;font-size:2.6rem;line-height:1;color:var(--gold-hi)}
+.ath-roadlist span{display:block;margin-top:10px;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)}
+.ath-rs{display:flex;align-items:flex-end;gap:clamp(18px,3vw,56px);border-bottom:1px solid var(--hair-d);padding-bottom:22px}
+.ath-rs figure{margin:0;min-width:0}
+.ath-rs svg{display:block;width:100%;height:auto;overflow:visible}
+.ath-rs .g-ground{stroke:rgba(244,239,230,.35);stroke-width:1}
+.ath-rs .g-road{fill:rgba(244,239,230,.13);stroke:rgba(244,239,230,.45);stroke-width:1}
+.ath-rs .g-now{fill:rgba(244,239,230,.13);stroke:rgba(244,239,230,.45);stroke-width:1}
+.ath-rs .g-wid{fill:url(#rs-hatch);stroke:rgba(202,167,115,.7);stroke-width:1;stroke-dasharray:4 3}
+.ath-rs .g-cl{stroke:rgba(244,239,230,.4);stroke-width:1;stroke-dasharray:6 6}
+.ath-rs .g-plot{fill:url(#rs-hatch);stroke:rgba(244,239,230,.25);stroke-width:1}
+.ath-rs .g-tree circle{fill:rgba(141,154,92,.16);stroke:#8d9a5c;stroke-width:1.2}
+.ath-rs .g-tree line,.ath-rs .g-lamp path{stroke:rgba(244,239,230,.55);stroke-width:1.2;fill:none}
+.ath-rs .g-lamp circle{fill:#caa773}
+.ath-rs .g-dim path{stroke:#caa773;stroke-width:1;fill:none}
+.ath-rs .g-ext{stroke:rgba(202,167,115,.4);stroke-width:1;stroke-dasharray:2 3}
+.ath-rs text{font-family:var(--sans);fill:rgba(244,239,230,.55);font-size:8px;letter-spacing:.2em}
+.ath-rs .t-dim{font-family:var(--serif);font-size:19px;letter-spacing:0;fill:#e2c79a}
+.ath-rs .t-dim.sm{font-size:14px;fill:rgba(244,239,230,.7)}
+.ath-rs figcaption{margin-top:16px}
+.ath-rs figcaption b{display:block;font-family:var(--serif);font-weight:400;font-size:1.35rem;line-height:1.2}
+.ath-rs figcaption span{display:block;margin-top:6px;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);line-height:1.8}
+.ath-rs-note{margin-top:16px;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);line-height:1.9}
+.ath-lu .lu-head b{color:var(--gold-hi)}
+
+/* ---------- location: site facts beside the map ---------- */
+.ath-locspecs{margin-bottom:6px}
+.ath-locspecs li b{font-size:1.15rem}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  .ath-render.render,.ath-render.render.in{transform:none!important}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .ath-ph-grid{grid-template-columns:1fr}
+  .ath-key{position:relative;top:auto;display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:24px;align-items:center}
+  .ath-key figcaption{margin-top:0}
+  .ath-amen-art{position:relative;top:auto;max-width:560px}
+}
+@media (max-width:767px){
+  [data-project="athena"] .gal figure.sheet{grid-column:1/-1}
+  .ath-hero .ath-cover .top{gap:28px}
+  .ath-hero .facts{gap:22px}
+  .ath-stage{padding-bottom:70px}
+  .ath-rimg{aspect-ratio:4/3}
+  .ath-render.is-sheet .ath-rimg{padding:8px}
+  .ath-rcap{margin-top:16px;letter-spacing:.2em}
+  .ath-key{display:block}
+  .ath-key svg{max-width:250px}
+  .ath-key figcaption{margin-top:12px;max-width:none}
+  .ath-cards{grid-template-columns:1fr}
+  .ath-card{padding:26px 20px 24px}
+  .ath-n{margin-top:22px}
+  .ath-dl li>b{font-size:1.08rem}
+  .ath-acts{padding-top:22px}
+  .ath-rera{flex-direction:column;gap:6px}
+  .ath-rera a{margin-left:0;margin-top:6px}
+  .ath-lead{grid-template-columns:1fr}
+  .ath-roadlist{grid-template-columns:1fr}
+  .ath-rs{flex-direction:column;align-items:stretch;gap:34px}
+  .ath-rs figure{width:var(--k,100%)}
+  .ath-phsel button{padding:0 10px;letter-spacing:.16em}
+  .ath-fb-grid{grid-template-columns:1fr}
+  .ath-fb{padding:8px}
+}
+
+/* neighbourhood band (shared .nbh in project.css): Athena's olive */
+.ath-nbh{--nb-1:#1c2016;--nb-2:#282e1e;--nb-acc:#b5c08a;--nb-em:#d7deb8}
+
+/* amenities: Athena's name panel fills the frame */
+.ath-frame{container-type:inline-size}
+.ath-frame .art{position:absolute;inset:0}

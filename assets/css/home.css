@@ -1,0 +1,68 @@
+/* =====================================================================
+   Rare Earth Projects · home.css  (landing page only)
+   Everything shared lives in site.css; this file only adds what the
+   landing page needs on top of it.
+   ===================================================================== */
+
+/* hero: the communities as points on the contour field live in site.css
+   (shared with the 404 page) */
+
+/* ---------- portfolio: hand-off to the listing ---------- */
+.pf-more{display:flex;flex-wrap:wrap;align-items:center;gap:18px 34px;margin-top:clamp(40px,6vh,64px)}
+.pf-note{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--mute)}
+.row:focus-visible{outline-offset:-1px}
+.row:focus-visible .nm{color:var(--gold-hi);font-style:italic}
+.row .st{white-space:nowrap}
+@media (min-width:1025px){
+  /* room for "Ready to register" on one line */
+  .row{grid-template-columns:70px 2.2fr 1.6fr 1.3fr 230px}
+}
+
+/* hover peek: `.art{position:relative}` in site.css out-ranks `.peek>*`,
+   which collapsed photo-only panels (Montira, Athena) to zero height */
+.peek>.art{position:absolute;inset:0}
+
+/* ---------- featured band (replaces the inline chapters) ---------- */
+/* a slightly lifted ground keeps the dark/light rhythm between the
+   portfolio (obsidian) and The Standard (ivory) */
+.home-feat{background:linear-gradient(180deg,var(--obsidian) 0%,var(--coal) 22%,var(--coal) 100%);border-top:1px solid var(--hair-d)}
+.home-feat .featb-head .display{margin-top:22px}
+.home-feat .fs-info{background:var(--obsidian)}
+/* photographs get the same editorial grade the old chapters used;
+   plan sheets (.sheet, multiply on cream) are left untouched */
+.home-feat .fs-media:not(.sheet) img{filter:saturate(.84) contrast(1.05) brightness(.9) sepia(.06)}
+
+/* ---------- presence map pins ---------- */
+.map .pins a{cursor:pointer;outline:none}
+.map .pins text{transition:fill .4s}
+.map .pins .hit{fill:transparent}
+.map .pins a:hover text,.map .pins a:focus-visible text{fill:var(--gold-hi)}
+.map .pins a:focus-visible .hit{stroke:var(--gold);stroke-width:1}
+.terrain .acts{margin-top:34px}
+
+/* ---------- private viewing: inline composer on the photo ground ---------- */
+.viewing .form-card{align-self:start}
+.viewing .form-card .enq-form{margin-top:4px}
+
+/* ---------- no-JS fallbacks ---------- */
+.no-js .loader{display:none}
+.no-js body.locked{overflow:auto}
+.ns-nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px 28px;padding-top:24px;padding-bottom:24px;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--mute-d)}
+.ns-nav a:first-child{color:var(--ivory);margin-right:auto}
+.ns-feat{padding:80px var(--gut)}
+.ns-feat p{font-family:var(--serif);font-size:1.6rem;margin-top:14px}
+.ns-form a,.ns-ft a{color:var(--gold)}
+.ns-ft{background:#070706;padding:60px 0 36px;font-size:.74rem;color:var(--mute)}
+.ns-ft p+p{margin-top:8px}
+
+@media (max-width:640px){
+  /* keep the two-line heading; carousel controls drop beneath it */
+  .home-feat .featb-head{flex-wrap:wrap;align-items:flex-start;gap:22px}
+  .home-feat .featb-head>div:first-child{flex:1 1 100%}
+  .pf-more{gap:14px}
+  .pf-more .pill{width:100%;justify-content:center}
+  .pf-note{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .map .pins animate{display:none}
+}

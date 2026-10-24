@@ -1,0 +1,13 @@
+# Not part of the published website
+.claude/
+brand-logos/
+button-options.png
+.DS_Store
+*.pano-test*
+.preview/
+.archive/
+node_modules/
+# the lead inbox is its own project (Cloudflare Worker), not website files
+lead-inbox/
+# marketing-collateral guide, kept beside the site files but not published
+COLLATERALS.md

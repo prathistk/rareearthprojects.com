@@ -1,0 +1,229 @@
+<!doctype html>
+<!--
+  =====================================================================
+  RARE EARTH PROJECTS · CONTACT HUB  (served at /contact/)
+  Three hash-addressable tabs (site.js initTabs, data-tabs-hash):
+    #buy         Buy a plot (default) · the shared enquiry composer
+    #landowners  Landowners & joint development · composer + land fields
+    #partners    Channel partners · composer + firm / RERA agent fields
+  Each panel's id IS its hash (buy / landowners / partners), so the deep
+  links also work as plain anchors without JavaScript.
+  Every tab sends WhatsApp-first to RE_CONFIG.whatsapp with email as the
+  alternative (no lead endpoint). Phones, email, office and the
+  community index are regenerated from assets/js/projects-data.js by
+  assets/js/contact.js; the static HTML is the no-JS fallback.
+  Deep links: /contact/?project=athena&intent=price#buy
+  =====================================================================
+-->
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.remove('no-js')</script>
+<title>Contact | Private Viewings &amp; Land Offers | Rare Earth Projects</title>
+<meta name="description" content="Arrange a private viewing, offer your land for sale or joint development, or work with us as a channel partner. Call, WhatsApp or write to Rare Earth Projects, Bengaluru.">
+<link rel="canonical" href="https://www.rareearthprojects.com/contact/">
+<meta name="theme-color" content="#0d0c0a">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Rare Earth Projects">
+<meta property="og:title" content="Contact Rare Earth Projects">
+<meta property="og:description" content="Arrange a private viewing, offer your land for sale or joint development, or work with us as a channel partner.">
+<meta property="og:url" content="https://www.rareearthprojects.com/contact/">
+<meta property="og:image" content="https://www.rareearthprojects.com/assets/montira/lawns-sm.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="Landscaped lawns at Montira with Nandi Hills in view">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/mark-gold.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/contact.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Rare Earth Projects","legalName":"Rarearth Projects Private Limited","url":"https://www.rareearthprojects.com/","logo":"https://www.rareearthprojects.com/assets/logo-vertical.png","email":"info@rareearthprojects.com","telephone":"+91-88841-50025","address":{"@type":"PostalAddress","streetAddress":"No. 2385, 2nd Floor, Next to Cauvery Public School, 60 Ft Road, E Block, Sahakarnagar","addressLocality":"Bengaluru","postalCode":"560092","addressRegion":"Karnataka","addressCountry":"IN"},"contactPoint":[{"@type":"ContactPoint","telephone":"+91-88841-50025","contactType":"sales","areaServed":"IN","availableLanguage":["en"]},{"@type":"ContactPoint","telephone":"+91-79964-99499","contactType":"customer service","areaServed":"IN"},{"@type":"ContactPoint","telephone":"+91-80683-52992","contactType":"customer service","areaServed":"IN"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Rare Earth Projects","url":"https://www.rareearthprojects.com/contact/","about":{"@type":"Organization","name":"Rare Earth Projects","url":"https://www.rareearthprojects.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.rareearthprojects.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://www.rareearthprojects.com/contact/"}]}
+</script>
+</head>
+<body data-root="../" data-page="contact">
+<div data-site="header"></div>
+<noscript><nav class="wrap ct-nsnav" aria-label="Primary"><a href="../">Rare Earth Projects</a> · <a href="../projects/">Projects</a> · <a href="../legal/">Privacy &amp; disclaimer</a></nav></noscript>
+
+<main id="main">
+
+<!-- =============== 1 · PAGE HEAD + TABS =============== -->
+<section class="phead ct-head" aria-labelledby="ct-h1">
+  <svg class="hero-field" data-contours data-seed="57" data-count="26" data-cx="1240" data-cy="430" data-size="1400" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol class="wrap"><li><a href="../">Home</a></li><li aria-current="page">Contact</li></ol></nav>
+  <div class="wrap">
+    <span class="kicker rv">By Appointment</span>
+    <h1 id="ct-h1" class="display h-lg split"><span class="ln"><span>Arrange a</span></span><span class="ln"><span><em>private viewing.</em></span></span></h1>
+    <p class="body-l rv d1">See the land for yourself. Our team will host you on site, walk you through the layout and documents, and answer every question without any pressure.</p>
+
+    <div class="ct-tabs rv d2" id="ctTabs" data-tabs data-tabs-hash aria-label="How can we help?">
+      <button type="button" role="tab" id="t-buy" data-hash="buy" aria-controls="buy" aria-selected="true"><small aria-hidden="true">01</small><b>Buy a plot</b><span>Villa plots &amp; plotted communities</span></button>
+      <button type="button" role="tab" id="t-landowners" data-hash="landowners" aria-controls="landowners" aria-selected="false"><small aria-hidden="true">02</small><b>Landowners &amp; joint development</b><span>Sell, or develop together</span></button>
+      <button type="button" role="tab" id="t-partners" data-hash="partners" aria-controls="partners" aria-selected="false"><small aria-hidden="true">03</small><b>Channel partners</b><span>Brokers &amp; property advisers</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 2 · PANELS (id="contact" lets the mobile bar step aside here) =============== -->
+<div class="ct-panels" id="contact">
+
+  <!-- ---------- Buy a plot ---------- -->
+  <section class="ct-panel" id="buy" role="tabpanel" aria-labelledby="t-buy">
+    <div class="wrap ct-grid">
+      <div class="ct-copy">
+        <span class="kicker">Buy a plot</span>
+        <h2 class="display h-md">Tell us what you're <em>looking for.</em></h2>
+        <p class="body-l">A plot size, a budget, a community you have in mind, or simply a date to visit. One team takes you from private viewing through documents and bank loans to registration.</p>
+        <ul class="lines" data-ct-lines="buy">
+          <li><small>Call</small><div><a href="tel:+918884150025">+91 88841 50025</a><br><a href="tel:+917996499499">+91 79964 99499</a><br><a href="tel:+918068352992">+91 80683 52992</a></div></li>
+          <li><small>Write</small><a href="mailto:info@rareearthprojects.com">info@rareearthprojects.com</a></li>
+          <li><small>WhatsApp</small><a href="https://wa.me/918884150025" target="_blank" rel="noopener">Message us directly</a></li>
+          <li><small>Office</small><span>Rarearth Projects Pvt. Ltd., No. 2385, 2nd Floor,<br>Next to Cauvery Public School, 60 Ft Road, E Block,<br>Sahakarnagar, Bengaluru 560092</span></li>
+        </ul>
+      </div>
+      <!-- The shared enquiry composer (enquiry.js) renders the fields here -->
+      <div class="form-card" id="buyForm" data-enquiry-form data-intent="visit" data-project="" data-source="contact-buy">
+        <h3>Request a viewing</h3>
+        <p>Share a few details and our team will be in touch personally.</p>
+        <noscript><p class="ct-ns">Call <a href="tel:+918884150025">+91 88841 50025</a>, message us on <a href="https://wa.me/918884150025">WhatsApp</a> or write to <a href="mailto:info@rareearthprojects.com">info@rareearthprojects.com</a> and our team will arrange your visit.</p></noscript>
+      </div>
+    </div>
+    <div class="wrap ct-comm">
+      <div class="ct-comm-h"><h3 class="kicker" id="ct-comm-h">Explore before you visit</h3><a class="link" href="../projects/">View all projects <span class="ln"></span></a></div>
+      <!-- The communities as points on a contour field, roughly where each sits around north Bengaluru.
+           Regenerated from projects-data.js by contact.js (site.js fillPins); static pins are the no-JS fallback -->
+      <div class="ct-pinmap rv">
+        <svg class="pm-field" data-contours data-seed="23" data-count="18" data-cx="820" data-cy="360" data-size="1100" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+        <nav class="pins" id="ctPins" aria-labelledby="ct-comm-h">
+          <a class="pin r live" href="../projects/montira/" style="--x:60%;--y:12%;--i:0" aria-label="Montira, Nandi Hills, now selling"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Montira</b><span>Nandi Hills</span></span></a>
+          <a class="pin r live" href="../projects/athena/" style="--x:84%;--y:71%;--i:1" aria-label="Athena, Devanahalli, now selling"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Athena</b><span>Devanahalli</span></span></a>
+          <a class="pin r" href="../projects/serenity/" style="--x:72%;--y:84%;--i:2"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Serenity</b><span>Bagalur</span></span></a>
+          <a class="pin r" href="../projects/tranquility/" style="--x:8%;--y:81%;--i:3"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Tranquility</b><span>Yelahanka</span></span></a>
+          <a class="pin r" href="../projects/arcadia/" style="--x:43%;--y:59%;--i:4"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Arcadia</b><span>SLK Tech Park</span></span></a>
+          <a class="pin r" href="../projects/elysia/" style="--x:33%;--y:76%;--i:5"><span class="dot" aria-hidden="true"></span><span class="lab"><b>Elysia</b><span>Kadiganahalli</span></span></a>
+        </nav>
+        <div class="pins-key" aria-hidden="true"><span class="k-live"><i></i>Now selling</span><span class="k-map"><svg viewBox="0 0 16 22"><path d="M8 21V2M3 7l5-5 5 5"/></svg>North Bengaluru · not to scale</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- Landowners & joint development ---------- -->
+  <section class="ct-panel" id="landowners" role="tabpanel" aria-labelledby="t-landowners">
+    <div class="wrap ct-grid">
+      <div class="ct-copy">
+        <span class="kicker">Landowners &amp; joint development</span>
+        <h2 class="display h-md">Have land?<br><em>Let's read it together.</em></h2>
+        <p class="body-l">If you own land around Bengaluru, we'd like to hear about it. Whether you are thinking of a sale or a joint development, we begin the way we always do: with careful due diligence on the land, its documents and where the region is heading.</p>
+        <h3 class="ct-sub">What helps us respond</h3>
+        <ul class="feat ct-feat">
+          <li>Village, hobli and taluk</li>
+          <li>Survey number(s)</li>
+          <li>Extent, in acres and guntas</li>
+          <li>Road access and frontage</li>
+          <li>Conversion and approval status, if known</li>
+          <li>A few photographs, if you have them</li>
+        </ul>
+        <p class="ct-aside">A few details are enough to begin; documents can follow later. We treat every land enquiry in confidence.</p>
+        <ul class="lines" data-ct-lines="landowners">
+          <li><small>Call</small><div><a href="tel:+918884150025">+91 88841 50025</a><br><a href="tel:+917996499499">+91 79964 99499</a></div></li>
+          <li><small>Write</small><a href="mailto:info@rareearthprojects.com?subject=Land%20offer">info@rareearthprojects.com</a></li>
+          <li><small>WhatsApp</small><a href="https://wa.me/918884150025" target="_blank" rel="noopener">Message us directly</a></li>
+        </ul>
+      </div>
+      <!-- contact.js mounts the shared composer here with land fields -->
+      <div class="form-card ct-form" id="landForm" data-ct-form="landowners" data-source="contact-landowners">
+        <h3>Tell us about the land</h3>
+        <p>Share what you know today. Our team will call you back personally.</p>
+        <noscript><p class="ct-ns">Call <a href="tel:+918884150025">+91 88841 50025</a> or write to <a href="mailto:info@rareearthprojects.com?subject=Land%20offer">info@rareearthprojects.com</a> with the village, survey number and extent of the land.</p></noscript>
+      </div>
+    </div>
+    <div class="wrap ct-steps-w">
+      <h3 class="kicker">How it works</h3>
+      <ol class="steps ct-steps">
+        <li><b>Share the basics</b><p>Where the land is, its survey number and extent. That is enough for a first conversation.</p></li>
+        <li><b>We read the land</b><p>Title, access, approvals and where the region is heading, studied before anything is promised.</p></li>
+        <li><b>We walk it with you</b><p>A visit to the parcel with you or your representative, and an honest view of its potential.</p></li>
+        <li><b>We talk options</b><p>An outright purchase or a joint development, whichever suits the land and its owners.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ---------- Channel partners ---------- -->
+  <section class="ct-panel" id="partners" role="tabpanel" aria-labelledby="t-partners">
+    <div class="wrap ct-grid">
+      <div class="ct-copy">
+        <span class="kicker">Channel partners</span>
+        <h2 class="display h-md">Bring your clients <em>to the right land.</em></h2>
+        <p class="body-l">If you advise buyers on plots and land around Bengaluru, we'd be glad to work with you. Tell us about your firm and your RERA agent registration, and our team will be in touch to take it forward.</p>
+        <h3 class="ct-sub">What to include</h3>
+        <ul class="feat ct-feat">
+          <li>Your firm's name and city</li>
+          <li>Your Karnataka RERA agent registration number</li>
+          <li>The communities your clients ask about</li>
+          <li>The best number to reach you</li>
+        </ul>
+        <ul class="lines" data-ct-lines="partners">
+          <li><small>Call</small><div><a href="tel:+918884150025">+91 88841 50025</a><br><a href="tel:+917996499499">+91 79964 99499</a></div></li>
+          <li><small>Write</small><a href="mailto:info@rareearthprojects.com?subject=Channel%20partner">info@rareearthprojects.com</a></li>
+          <li><small>WhatsApp</small><a href="https://wa.me/918884150025" target="_blank" rel="noopener">Message us directly</a></li>
+        </ul>
+        <p class="ct-mailcard" data-ct-mailcard>Prefer email? <a class="link" href="mailto:info@rareearthprojects.com?subject=Channel%20partner">Write with our template <span class="ln"></span></a></p>
+      </div>
+      <!-- contact.js mounts the shared composer here with firm fields -->
+      <div class="form-card ct-form" id="partnerForm" data-ct-form="partners" data-source="contact-partners">
+        <h3>Work with us</h3>
+        <p>A few details about you and your firm, and we'll take it from there.</p>
+        <noscript><p class="ct-ns">Write to <a href="mailto:info@rareearthprojects.com?subject=Channel%20partner">info@rareearthprojects.com</a> with your firm's name, city and Karnataka RERA agent registration number.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- =============== 3 · THE OFFICE =============== -->
+<!-- data-lat / data-lng: the office pin from Google Maps (owner, 2026-10-17); RE_CONFIG.office.lat / lng override them when added -->
+<section class="ct-office" id="office" aria-labelledby="office-h" data-lat="13.0608421" data-lng="77.5875166">
+  <div class="wrap ct-office-grid">
+    <div class="ct-office-copy">
+      <span class="kicker">The Office</span>
+      <h2 id="office-h" class="display h-md">Sahakarnagar, <em>Bengaluru.</em></h2>
+      <address class="ct-addr" data-ct-addr>Rarearth Projects Pvt. Ltd., No. 2385, 2nd Floor,<br> Next to Cauvery Public School, 60 Ft Road, E Block,<br> Sahakarnagar, Bengaluru 560092</address>
+      <p class="ct-office-note">Site visits to the communities are arranged by appointment; tell us the day that suits you and we'll plan the rest.</p>
+      <div class="ct-office-acts">
+        <a class="pill sm" data-ct-maps href="https://www.google.com/maps/search/?api=1&amp;query=13.0608421%2C77.5875166" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+        <a class="link" data-ct-dir href="https://www.google.com/maps/dir/?api=1&amp;destination=13.0608421%2C77.5875166" target="_blank" rel="noopener">Get directions <span class="ln"></span></a>
+      </div>
+    </div>
+    <!-- Stylised, on-brand map card: no Google Maps script or embed. A click opens Google Maps in a new tab. -->
+    <a class="ct-map" data-ct-maps href="https://www.google.com/maps/search/?api=1&amp;query=13.0608421%2C77.5875166" target="_blank" rel="noopener" aria-label="Open the Rare Earth Projects office in Sahakarnagar on Google Maps (opens in a new tab)">
+      <svg class="ct-map-field" data-contours data-seed="88" data-count="20" data-cx="820" data-cy="470" data-size="900" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+      <span class="ct-map-grid" aria-hidden="true"></span>
+      <span class="ct-pin" aria-hidden="true"><i></i></span>
+      <span class="ct-map-lbl" aria-hidden="true"><b>Rare Earth Projects</b><span>2nd Floor · No. 2385 · 60 Ft Road</span><span>E Block, Sahakarnagar</span></span>
+      <span class="ct-map-cta" aria-hidden="true">Open in Google Maps ↗</span>
+      <span class="ct-map-note" aria-hidden="true">Schematic · not to scale</span>
+    </a>
+  </div>
+</section>
+
+</main>
+<div data-site="footer"></div>
+<noscript><footer class="ns-ft"><div class="wrap"><p>© Rarearth Projects Private Limited · CIN U70100KA2022PTC157243 · GST 29AALCR6032M1ZT</p><p><a href="../legal/">Privacy &amp; disclaimer</a></p></div></footer></noscript>
+
+<script src="../assets/js/projects-data.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/enquiry.js" defer></script>
+<script src="../assets/js/contact.js" defer></script>
+</body>
+</html>
