@@ -37,9 +37,9 @@
     whatsappLabel: '+91 88841 50025',
     email: 'info@rareearthprojects.com',
     office: {
-      lines: ['Rarearth Projects Pvt. Ltd., No. 2385, 2nd Floor,', 'Next to Cauvery Public School, 60 Ft Road, E Block,', 'Sahakarnagar, Bengaluru 560092'],
+      lines: ['Rarearth Projects Pvt. Ltd., 2nd Floor, Ritwik Plaza,', 'No. 2386/2387, 60 Ft Road, Next to Cauvery Public School,', 'E Block, Sahakarnagar, Bengaluru 560092'],
       short: 'Sahakarnagar, Bengaluru 560092',
-      menu: ['2nd Floor, No. 2385, 60 Ft Road, E Block,', 'Sahakarnagar, Bengaluru 560092']
+      menu: ['2nd Floor, Ritwik Plaza, No. 2386/2387,', '60 Ft Road, E Block, Sahakarnagar, Bengaluru 560092']
     },
     quote: 'Land, chosen with care. Built to be handed down.',
     priceNote: '*Prices indicative & subject to availability; registration, stamp duty and other charges extra.',
